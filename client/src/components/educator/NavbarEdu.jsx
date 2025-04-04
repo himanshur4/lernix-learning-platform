@@ -6,9 +6,9 @@ const NavbarEdu = () => {
   const educatorData=dummyEducatorData
   const {user}=useUser()
   return (
-    <div className='flex items-center justify-between px-4 md:px-8 border-b border-gray-500 py-3'>
+    <div className='flex items-center justify-between px-4 md:px-8 border-b border-gray-500 py-3 bg-fuchsia-100'>
       <Link to='/'>
-      <img src={assets.gurukulLogo} alt="Logo" className='w-9 lg:w-15'/>
+      <img src={assets.gurukulLogo} alt="Logo" className='w-9 lg:w-13'/>
       </Link>
       <div className='flex items-center gap-5 text-gray-500 relative'>
         <p>Hi! {user ? user.fullName:'Developers'}</p>

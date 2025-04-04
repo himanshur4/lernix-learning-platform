@@ -12,7 +12,7 @@ const Navbar = () => {
     const { user } = useUser()
     return (
         <div className={`flex items-center justify-between px-4 sm:px-10 md:px-14 lg:px-36 border-1 border-gray-500 border-l-0 border-r-0 py-4 ${isCourseListPage ? 'bg-white' : 'bg-fuchsia-200'}`}>
-            <img onClick={()=>navigate('/')} src={assets.gurukulLogo} alt="Logo" className=" w-9 lg:w-15 cursor-pointer" />
+            <img onClick={()=>navigate('/')} src={assets.gurukulLogo} alt="Logo" className=" w-9 lg:w-13 cursor-pointer" />
             <div className='hidden md:flex items-center gap-5 text-gray-800'>
                 <div className='flex items-center gap-5'>
                     {user && <>
@@ -27,7 +27,7 @@ const Navbar = () => {
                 <div className='flex items-center gap-1 sm:gap-2 max-sm:text-xs'>
                     {user &&
                         <>
-                            <button onClick={()=>{navigate('/educator')}}>{isEducator?'Educator dashboard':'Become Educator'}</button>|
+                            <button className='cursor-pointer' onClick={()=>{navigate('/educator')}}>{isEducator?'Educator dashboard':'Become Educator'}</button>|
                             <Link to='/my-enrollments'>My Enrollments</Link>
                         </>
                     }
