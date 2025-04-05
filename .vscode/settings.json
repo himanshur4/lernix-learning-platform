@@ -1,6 +1,0 @@
-{
-    "editor.defaultFormatter": null,
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
-}
