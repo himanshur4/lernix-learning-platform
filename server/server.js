@@ -9,6 +9,7 @@ const app=express()
 await connectDB()
 app.use(cors())
 
+
 app.get('/',(req,res)=>res.send("API Working"))
 
 app.post('/clerk',express.json(),clerkWebhooks)
