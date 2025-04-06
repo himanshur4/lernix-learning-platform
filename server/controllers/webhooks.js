@@ -1,45 +1,41 @@
 import { Webhook } from "svix";
 import User from "../models/user.js";
 
-//API Controller Function to manage Clerk user with database
+//API controller function to manage clerk user with database
 
-export const clerkWebhooks = async (req, res) => {
-    console.log("hey")
-    try {
-        const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
-        await whook.verify(JSON.stringify(req.body), {
-            "svix-id": req.headers["svix-id"],
-            "svix-timestamp": req.headers["svix-timestamp"],
-            "svix-signature": req.headers["svix-signature"]
+export const clerkWebhooks=async(req,res)=>{
+    try{
+        const whook=new Webhook(process.env.CLERK_WEBHOOK_SECRET)
+
+        await whook.verify(JSON.stringify(req.body),{
+            "svix-id":req.headers["svix-id"],
+            "svix-timestamp":req.headers["svix-timestamp"],
+            "svix-signature":req.headers["svix-signature"]
         })
-
-        const { data, type } = req.body
-        console.log(data)
-        switch (type) {
-            case 'user.created': {
-                const userData = {
-                    _id: data.id,
-                    email: data.email_addresses[0].email_address,
-                    name: data.first_name + " " + data.last_name,
-                    imageUrl: data.imageUrl,
+        const {data,type}=req.body
+        switch(type){
+            case 'user.created':{
+                const userData={
+                    _id:data.id,
+                    email:data.email_addresses[0].email_address,
+                    name:data.first_name+" "+data.last_name,
+                    imageUrl:data.image_url,
                 }
                 await User.create(userData)
                 res.json({})
                 break;
             }
-
-            case 'user.updated': {
-                const userData = {
-
-                    email: data.email_addresses[0].email_address,
-                    name: data.first_name + " " + data.last_name,
-                    imageUrl: data.imageUrl,
+            case 'user.updated':{
+                const userData={
+                    email:data.email_addresses[0].email_address,
+                    name:data.first_name+" "+data.last_name,
+                    imageUrl:data.image_url,
                 }
-                await User.findByIdAndUpdate(data.id, userData)
+                await User.findByIdAndUpdate(data.id)
                 res.json({})
                 break;
             }
-            case 'user.deleted': {
+            case 'user.deleted':{
                 await User.findByIdAndDelete(data.id)
                 res.json({})
                 break;
@@ -47,9 +43,7 @@ export const clerkWebhooks = async (req, res) => {
             default:
                 break;
         }
-
-    } catch (error) {
-        res.json({ success: false, message: error.message })
+    }catch(error){
+        res.json({success:false,message:error.message})
     }
-
 }

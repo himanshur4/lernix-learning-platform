@@ -1,10 +1,8 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
-//connect to the MongoDB database
-
-const connectDB= async ()=>{
+const connectDB=async()=>{
     mongoose.connection.on('connected',()=>console.log('Database Connected'))
 
-    await mongoose.connect(`${process.env.MONGODB_URI}/gurukul`)
+    await mongoose.connect(`${process.env.MONGODB_URI}/myLMS`)
 }
 export default connectDB
