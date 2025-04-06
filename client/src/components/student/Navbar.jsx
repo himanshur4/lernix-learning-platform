@@ -33,7 +33,7 @@ const Navbar = () => {
                     }
                 </div>
                 {user ? <UserButton /> : <button onClick={()=>openSignIn()}>
-                    <img src={assets.user_icon} alt="loginIcon" />
+                    <img src={assets.user_icon} alt="loginIcon" className='cursor-pointer'/>
                 </button>}
 
             </div>
