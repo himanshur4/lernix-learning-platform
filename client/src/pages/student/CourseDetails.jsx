@@ -6,6 +6,8 @@ import assets from '../../assets/assets'
 import humanizeDuration from 'humanize-duration'
 import Footer from '../../components/student/Footer'
 import YouTube from 'react-youtube'
+import { toast } from 'react-toastify'
+import axios from 'axios'
 const CourseDetails = () => {
   const { id } = useParams()
   const [courseData, setCourseData] = useState(null)
@@ -13,14 +15,33 @@ const CourseDetails = () => {
   const [isAlreadyEnrolled, setIsAlreadyEnrolled] = useState(false)
   const [playerData, setPlayerData] = useState(null)
 
-  const { allCourses, calculateRating, calculateNoOfLectures, calculateCourseDuration, calculateChapterTime, currency } = useContext(AppContext)
+  const { allCourses, calculateRating, calculateNoOfLectures, calculateCourseDuration, calculateChapterTime, currency ,backendUrl,userData} = useContext(AppContext)
   const fetchCourseData = async () => {
-    const findCourse = allCourses.find(course => course._id === id)
-    setCourseData(findCourse)
+    try {
+      const {data}=await axios.get(backendUrl+'/api/course/'+id)
+      if(data.success){
+        setCourseData(data.courseData)
+      }
+      else{
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
   }
+
+  const enrollCourse=async()=>{
+    try {
+      
+      
+    } catch (error) {
+      
+    }
+  }
+  
   useEffect(() => {
     fetchCourseData()
-  }, [allCourses])
+  }, [])
   const toggleSection = (index) => {
     setOpenSections((prev) => (
       {
