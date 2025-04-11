@@ -68,7 +68,7 @@ const Player = () => {
   const getCourseProgress = async () => {
     try {
       const token = await getToken()
-      const { data } = await axios.post(backendUrl + '/api/user/get-course-progress', { courseId }, { Authorization: `Bearer ${token}` })
+      const { data } = await axios.post(backendUrl + '/api/user/get-course-progress', { courseId }, {headers:{ Authorization: `Bearer ${token}` }})
       if (data.success) {
         setProgressData(data.progressData)
       } else {
