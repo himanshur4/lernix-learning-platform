@@ -155,7 +155,7 @@ const MyCourses = () => {
           <div className="text-center py-10 md:py-16 bg-white rounded-lg border border-fuchsia-100 shadow-sm">
             <div className="flex flex-col items-center px-4">
 
-              <h3 className="text-lg font-medium text-gray-800 mb-2">No courses yet...</h3>
+              <h3 className="text-lg font-medium text-gray-800 mb-2">No courses published yet...</h3>
               
             </div>
           </div>
