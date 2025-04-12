@@ -3,8 +3,8 @@ import assets from '../../assets/assets'
 import SearchBar from './SearchBar'
 const Hero = () => {
   return (<>
-    <div className='flex flex-col items-center justify-center w-full md:pt-30 pt-20 px-7 md:px-0 space-y-7 text-center  bg-gradient-to-b from-fuchsia-300 to-fuchsia-200 mb-0'>
-      <h1 className='md:text-home-heading -large text-home-heading-small relative font-bold md:max-w-3xl lg:max-w-4xl mx-auto text-4xl md:text-5xl lg:text-6xl transition-all hover:'>
+    <div className='flex flex-col items-center justify-center w-full md:pt-20 lg:pt-25 pt-20 px-7 md:px-0 space-y-7 text-center  bg-gradient-to-b from-fuchsia-300 to-fuchsia-200 mb-0'>
+      <h1 className='md:text-home-heading -large text-home-heading-small relative font-bold md:max-w-3xl lg:max-w-4xl mx-auto text-4xl md:text-5xl lg:text-6xl  transition-all '>
         Take control of your future with courses that<span className='text-fuchsia-900'> fit your choice.</span><img
           src={assets.sketch}
           alt="sketch"
