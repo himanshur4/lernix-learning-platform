@@ -1,0 +1,57 @@
+{
+    "courseTitle": "Java + DSA + Interview Preparation Course",
+    "courseDescription": "This comprehensive course covers Java programming, Data Structures and Algorithms (DSA), and interview preparation strategies. Designed to help learners prepare for technical interviews at top tech companies.",
+    "coursePrice": 0,
+    "isPublished": true,
+    "discount": 0,
+    "courseContent": [
+      {
+        "chapterId": "chapter1",
+        "chapterOrder": 1,
+        "chapterTitle": "Introduction to Java",
+        "chapterContent": [
+          {
+            "lectureId": "lecture1",
+            "lectureTitle": "Introduction to Java - Architecture & Installation",
+            "lectureDuration": 30,
+            "lectureUrl": "https://www.youtube.com/watch?v=4EP8YzcN0hQ",
+            "isPreviewFree": true,
+            "lectureOrder": 1
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter2",
+        "chapterOrder": 2,
+        "chapterTitle": "Sorting Algorithms",
+        "chapterContent": [
+          {
+            "lectureId": "lecture2",
+            "lectureTitle": "Merge Sort Using Recursion (Theory + Complexity + Code)",
+            "lectureDuration": 45,
+            "lectureUrl": "https://www.youtube.com/watch?v=iKGAgWdgoRk",
+            "isPreviewFree": true,
+            "lectureOrder": 1
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter3",
+        "chapterOrder": 3,
+        "chapterTitle": "Binary Trees",
+        "chapterContent": [
+          {
+            "lectureId": "lecture3",
+            "lectureTitle": "Binary Trees Tutorial - Introduction + Traversals",
+            "lectureDuration": 50,
+            "lectureUrl": "https://www.youtube.com/watch?v=4s1Tcvm00pA",
+            "isPreviewFree": true,
+            "lectureOrder": 1
+          }
+        ]
+      }
+    ],
+    "educator": "Kunal Kushwaha",
+    "courseThumbnail": "https://img.youtube.com/vi/4EP8YzcN0hQ/maxresdefault.jpg"
+  }
+  
