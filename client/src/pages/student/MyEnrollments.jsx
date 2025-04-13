@@ -111,7 +111,7 @@ const MyEnrollments = () => {
                   />
                   <div className='flex justify-end'>
                     <button
-                      className='px-3 py-1.5 bg-fuchsia-600 text-white text-xs rounded hover:bg-fuchsia-700 transition-colors'
+                      className='px-3 py-1.5 bg-fuchsia-600 text-white text-xs rounded hover:bg-fuchsia-700 hover:transition-all hover:duration-200 cursor-pointer'
                       onClick={() => navigate('/player/' + course._id)}
                     >
                       {progressArray[index] && progressArray[index].lectureCompleted / progressArray[index].totalLectures === 1 ? 'Completed' : 'Ongoing...'}

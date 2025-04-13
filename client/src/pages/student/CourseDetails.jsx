@@ -190,7 +190,7 @@ const CourseDetails = () => {
               </div>
 
             </div>
-            <button onClick={enrollCourse} className='md:mt-6 mt-4 w-full py-3 rounded bg-fuchsia-600 text-white font-medium'>{isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
+            <button onClick={enrollCourse} className='md:mt-6 mt-4 w-full py-3 rounded bg-fuchsia-600 text-white font-medium hover:transition-all hover:duration-200 cursor-pointer hover:bg-fuchsia-700'>{isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
             <div className='pt-6' >
               <p className='md:text-xl text-lg font-medium text-gray-800' >What's in the course?</p>
               <ul className='ml-4 pt-2 text-sm md:text-default list-disc text-gray-500' >

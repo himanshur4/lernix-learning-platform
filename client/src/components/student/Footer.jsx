@@ -7,7 +7,7 @@ const Footer = () => {
       <div className='flex flex-col md:flex-row items-start px-8 md:px-0 justify-center gap-10 md:gap-32 py-10 border-b border-white/30'>
         <div className='flex flex-col md:items-start items-center w-full'>
           <img src={assets.gurukulLogo} alt="logo" />
-          <p className='mt-6 text-center md:text-left text-sm text-white/80'>Empowering learners through accessible, high-quality education. Our LMS platform connects students and instructors to a world of knowledge—anytime, anywhere.</p>
+          <p className='mt-6 text-center md:text-left text-sm text-white/80'>Empowering learners through accessible, high-quality education.</p>
         </div>
         <div className='flex flex-col md:items-start items-center w-full'>
           <h2 className='font-semibold text-white mb-5'>Company</h2>
@@ -37,7 +37,7 @@ const Footer = () => {
 
       </div>
       <p className='py-4 text-center text-xs md:text-sm text-white/60'>
-        Copyright {new Date().getFullYear()} © Gurukul. All Right Reserved.
+        Copyright {new Date().getFullYear()} © Lernix. All Right Reserved.
       </p>
 
     </footer>
