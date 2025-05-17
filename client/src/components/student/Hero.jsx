@@ -11,7 +11,7 @@ const [animate, setAnimate] = useState(false);
   const animationStyle = {
     opacity: animate ? 1 : 0,
     transform: animate ? 'translateY(0)' : 'translateY(20px)',
-    transition: 'opacity 1s ease, transform 3s ease',
+    transition: 'opacity 1s ease, transform 1s ease',
   };
 
   return (<>
