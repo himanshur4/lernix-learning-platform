@@ -3,7 +3,7 @@ import assets from '../../assets/assets'
 
 const Companies = () => {
   return (
-    <div className='bg-gradient-to-b from-fuchsia-200 to bg-fuchsia-100 w-full mb-0'>
+    <div className=' w-full mb-0'>
       <div className='pt-16'>
         <p className='text-base text-gray-700'>Trusted by learners from</p>
         <div className='flex flex-wrap items-center justify-center gap-6 md:gap-16 md:mt-10 mt-5'>

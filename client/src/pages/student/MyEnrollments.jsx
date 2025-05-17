@@ -78,7 +78,7 @@ const MyEnrollments = () => {
                   </td>
                   <td className='px-4 py-3'>
                     <button
-                      className='px-4 py-2 bg-fuchsia-600 text-white rounded hover:bg-fuchsia-700 transition-colors cursor-pointer'
+                      className='px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors cursor-pointer'
                       onClick={() => navigate('/player/' + course._id)}
                     >
                       {progressArray[index] && progressArray[index].lectureCompleted / progressArray[index].totalLectures === 1 ? 'Completed' : 'Ongoing...'}
@@ -111,7 +111,7 @@ const MyEnrollments = () => {
                   />
                   <div className='flex justify-end'>
                     <button
-                      className='px-3 py-1.5 bg-fuchsia-600 text-white text-xs rounded hover:bg-fuchsia-700 hover:transition-all hover:duration-200 cursor-pointer'
+                      className='px-3 py-1.5 bg-orange-600 text-white text-xs rounded-3xl hover:bg-orange-700 hover:transition-all hover:duration-200 cursor-pointer'
                       onClick={() => navigate('/player/' + course._id)}
                     >
                       {progressArray[index] && progressArray[index].lectureCompleted / progressArray[index].totalLectures === 1 ? 'Completed' : 'Ongoing...'}

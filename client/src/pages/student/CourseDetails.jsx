@@ -69,8 +69,8 @@ const CourseDetails = () => {
   }
   return courseData ? (
     <>
-      <div className='flex md:flex-row flex-col-reverse gap-10 relative items-start justify-between md:px-36 px-8 md:pt-30 pt-20 text-left'>
-        <div className='absolute top-0 left-0 w-full h-[500px]  bg-gradient-to-b from-fuchsia-300 opacity-70'></div>
+      <div className='flex md:flex-row flex-col-reverse gap-10 relative items-start justify-between md:px-36 px-8 md:pt-30 pt-20 text-left shaadow-lg rounded-2xl'>
+        <div className='absolute top-0 left-0 w-full h-[500px] '></div>
         {/*left Column  */}
         <div className='max-w-xl z-10 text-gray-500'>
           <h1 className='text-[26px] md:text-[36px] lg:text-[44px] font-semibold text-gray-900'>{courseData.courseTitle}</h1>
@@ -83,12 +83,12 @@ const CourseDetails = () => {
                 <img key={i} src={i < Math.floor(calculateRating(courseData)) ? assets.star : assets.star_blank} alt='ratingStar' className='w-3.5 h-3.5' />
               ))}
             </div>
-            <p className='text-fuchsia-600'>({courseData.courseRatings.length} {courseData.courseRatings.length > 1 ? 'ratings' : 'rating'})</p>
+            <p className='text-orange-600'>({courseData.courseRatings.length} {courseData.courseRatings.length > 1 ? 'ratings' : 'rating'})</p>
 
             <p>{courseData.enrolledStudents.length} {courseData.enrolledStudents.length > 1 ? 'students' : 'student'}</p>
 
           </div>
-          <p className='text-sm'>Course by <span className='text-fuchsia-600 underline'>{courseData.educator.name}</span></p>
+          <p className='text-sm'>Course by <span className='text-orange-600 underline'>{courseData.educator.name}</span></p>
           <div className='pt-8 text-gray-800'>
             <h2 className='text-xl font-semibold '>Course structure</h2>
             <div className='pt-5'>
@@ -118,7 +118,7 @@ const CourseDetails = () => {
                                   videoId: lecture.lectureUrl.split('/').pop()
 
                                 })}
-                                  className='text-fuchsia-500 cursor-pointer'>Preview</p>}
+                                  className='text-orange-500 cursor-pointer'>Preview</p>}
                                 <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, { units: ['h', 'm'] })}</p>
                               </div>
                             </div>
@@ -143,7 +143,7 @@ const CourseDetails = () => {
 
 
         {/* right column */}
-        <div className='max-w-[424px] z-10 shadow-[0px,4px,15px,2px rgba(0,0,0,0.1)] rounded-t md:rounded-none overflow-hidden bg-white min-w-[300px] sm:min-w-[420px]'>
+        <div className='max-w-[424px] z-10 shadow-[0px,4px,15px,2px rgba(0,0,0,0.1)] rounded-4xl overflow-hidden bg-white shadow-xl min-w-[300px] sm:min-w-[420px] transition-transform duration-300 hover:-translate-y-1 hover:drop-shadow-2xl cursor-pointer'>
           {
             playerData ?
               <YouTube videoId={playerData.videoId} opts={{ playerVars: { autoplay: 1 } }} iframeClassName='w-full aspect-video' />
@@ -190,7 +190,7 @@ const CourseDetails = () => {
               </div>
 
             </div>
-            <button onClick={enrollCourse} className='md:mt-6 mt-4 w-full py-3 rounded bg-fuchsia-600 text-white font-medium hover:transition-all hover:duration-200 cursor-pointer hover:bg-fuchsia-700'>{isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
+            <button onClick={enrollCourse} className='md:mt-6 mt-4 w-full py-3  bg-orange-600 rounded-2xl text-white font-medium hover:transition-all hover:duration-200 cursor-pointer hover:bg-orange-700'>{isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
             <div className='pt-6' >
               <p className='md:text-xl text-lg font-medium text-gray-800' >What's in the course?</p>
               <ul className='ml-4 pt-2 text-sm md:text-default list-disc text-gray-500' >

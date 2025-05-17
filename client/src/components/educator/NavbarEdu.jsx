@@ -3,20 +3,21 @@ import assets, { dummyEducatorData } from '../../assets/assets'
 import { UserButton, useUser } from '@clerk/clerk-react'
 import { Link } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
+import { BookOpen } from 'lucide-react'
 
 const NavbarEdu = () => {
   const educatorData = dummyEducatorData
   const { user } = useUser()
   const { navigate } = useContext(AppContext)
   return (
-    <div className="bg-gradient-to-b from-fuchsia-300 via-fuchsia-300 to-fuchsia-300 w-full">
+    <div className="bg-gradient-to-l from-orange-700 via-orange-500 to-orange-500 w-full">
       <div className="flex items-center justify-between h-16 px-4 md:px-6 w-full">
 
-        <div onClick={() => navigate('/')} className="flex items-center space-x-3">
-
-          <img src={assets.gurukulLogo} alt="Logo" className=" w-9 lg:w-13 cursor-pointer" />
-          <span className="hidden md:block md:text-xl lg:text-2xl ml-1 font-semibold text-amber-950 cursor-pointer">Lernix</span>
-
+        <div onClick={() => navigate('/')} className="flex items-center space-x-3 cursor-pointer">
+          <div className={`flex items-center justify-center bg-gradient-to-tl from-black to-orange-900 via-orange-900 text-white p-1 rounded-lg shadow-md transition-all duration-300 hover:scale-110`}>
+            <BookOpen size={20} className="mr-1" />
+            <span className="font-semibold text-lg font-mono">L</span>
+          </div>
         </div>
 
 
@@ -27,10 +28,10 @@ const NavbarEdu = () => {
           {/* User Profile */}
           <div className="flex items-center space-x-3">
             <div className="hidden md:block text-right">
-              <p className="text-sm font-medium text-gray-800">
+              <p className="text-sm font-medium text-white">
                 Hi, {user ? user.fullName : 'Educator'}
               </p>
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-white">
                 {educatorData?.title || 'Instructor'}
               </p>
             </div>

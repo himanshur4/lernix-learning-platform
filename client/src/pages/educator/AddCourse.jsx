@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import uniqid from 'uniqid'
 import Quill from 'quill'
-import assets from '../../assets/assets';
 import { AppContext } from '../../context/AppContext';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { PlusIcon, UploadCloud } from 'lucide-react';
 
 const AddCourse = () => {
   const quillRef = useRef(null);
@@ -134,11 +134,11 @@ const AddCourse = () => {
   }, []);
 
   return (
-    <div className='min-h-screen overflow-auto flex flex-col items-center justify-start p-3 sm:p-5 md:p-8 bg-gradient-to-b from-fuchsia-100 to-white'>
+    <div className='min-h-screen overflow-auto flex flex-col items-center justify-start p-3 sm:p-5 md:p-8 '>
       <div className="w-full max-w-3xl">
-        <h1 className="text-xl md:text-2xl font-bold text-fuchsia-900 mb-3 md:mb-4">Create New Course</h1>
+        <h1 className="text-xl md:text-2xl font-bold text-orange-900 mb-3 md:mb-4">Create New Course</h1>
 
-        <form onSubmit={handleSubmit} className='flex flex-col gap-3 md:gap-4 w-full text-fuchsia-900 bg-white p-4 md:p-6 rounded-xl border-t-4 border-fuchsia-600 shadow-md'>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-3 md:gap-4 w-full text-orange-900 bg-white p-4 md:p-6 rounded-xl border-t-4 border-orange-600 shadow-md'>
           <div className="flex flex-col gap-1 md:gap-2">
             <label className="font-medium text-sm md:text-base">Course Title</label>
             <input
@@ -146,14 +146,14 @@ const AddCourse = () => {
               value={courseTitle}
               type="text"
               placeholder='Type course title here'
-              className='outline-none py-2 md:py-3 px-3 md:px-4 text-sm md:text-base rounded-lg border border-fuchsia-200 focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-100 transition-all'
+              className='outline-none py-2 md:py-3 px-3 md:px-4 text-sm md:text-base rounded-lg border border-orange-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all'
               required
             />
           </div>
 
           <div className="flex flex-col gap-1 md:gap-2">
             <label className="font-medium text-sm md:text-base">Course Description</label>
-            <div className="border border-fuchsia-200 rounded overflow-hidden">
+            <div className="border border-orange-200 rounded overflow-hidden">
               <div ref={editorRef} className="min-h-24 text-sm md:text-base"></div>
             </div>
           </div>
@@ -166,7 +166,7 @@ const AddCourse = () => {
                 value={coursePrice}
                 type="number"
                 placeholder='0'
-                className='outline-none py-2 md:py-3 px-3 md:px-4 text-sm md:text-base rounded-lg border border-fuchsia-200 focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-100 transition-all'
+                className='outline-none py-2 md:py-3 px-3 md:px-4 text-sm md:text-base rounded-lg border border-orange-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all'
                 required
               />
             </div>
@@ -180,7 +180,7 @@ const AddCourse = () => {
                 placeholder='0'
                 min={0}
                 max={100}
-                className='outline-none py-2 md:py-3 px-3 md:px-4 text-sm md:text-base rounded-lg border border-fuchsia-200 focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-100 transition-all'
+                className='outline-none py-2 md:py-3 px-3 md:px-4 text-sm md:text-base rounded-lg border border-orange-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all'
                 required
               />
             </div>
@@ -189,15 +189,10 @@ const AddCourse = () => {
           <div className="flex flex-col gap-1 md:gap-2">
             <label className="font-medium text-sm md:text-base">Course Thumbnail</label>
             <div className="flex items-center gap-4">
-              <label htmlFor="thumbnailImage" className='flex items-center justify-center cursor-pointer hover:bg-fuchsia-50 transition-colors'>
+              <label htmlFor="thumbnailImage" className='flex items-center justify-center cursor-pointer hover:bg-orange-50 transition-colors'>
                 {!image && (
-                  <div className="flex flex-col items-center justify-center text-fuchsia-500 w-20 h-20 md:w-28 md:h-28 border-2 border-dashed border-fuchsia-300 rounded-lg">
-                    <img
-                      src={assets.file_upload_icon}
-                      alt="Upload"
-                      className="w-6 h-6 md:w-8 md:h-8 mb-1 md:mb-2"
-                      style={{ filter: 'invert(20%) sepia(100%) saturate(5000%) hue-rotate(300deg) brightness(100%) contrast(300%)' }}
-                    />
+                  <div className="flex flex-col items-center justify-center text-orange-500 w-20 h-20 md:w-28 md:h-28 border-2 border-dashed border-orange-300 rounded-lg">
+                    <UploadCloud className='w-8'/>
                     <span className="text-xs md:text-sm">Upload Image</span>
                   </div>
                 )}
@@ -221,7 +216,7 @@ const AddCourse = () => {
                 <button
                   type="button"
                   onClick={() => setImage(null)}
-                  className="text-xs md:text-sm text-fuchsia-600 hover:text-fuchsia-800 cursor-pointer"
+                  className="text-xs md:text-sm text-orange-600 hover:text-orange-800 cursor-pointer"
                 >
                   Remove
                 </button>
@@ -234,8 +229,8 @@ const AddCourse = () => {
 
             <div className="space-y-2">
               {chapters.map((chapter, chapterIndex) => (
-                <div key={chapterIndex} className='bg-white border border-fuchsia-200 rounded-lg shadow-sm'>
-                  <div className='flex justify-between items-center p-3 md:p-4 border-b border-fuchsia-100 bg-fuchsia-50'>
+                <div key={chapterIndex} className='bg-white border border-orange-200 rounded-lg shadow-sm'>
+                  <div className='flex justify-between items-center p-3 md:p-4 border-b border-orange-100 bg-orange-50'>
                     <div className='flex items-center'>
                       <button
                         type="button"
@@ -246,15 +241,15 @@ const AddCourse = () => {
                           <path d="M18 6L6 18M6 6L18 18" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </button>
-                      <span className='font-medium text-sm md:text-base text-fuchsia-900 truncate max-w-32 sm:max-w-full'>Chapter {chapterIndex + 1}: {chapter.chapterTitle}</span>
+                      <span className='font-medium text-sm md:text-base text-orange-900 truncate max-w-32 sm:max-w-full'>Chapter {chapterIndex + 1}: {chapter.chapterTitle}</span>
                     </div>
 
                     <div className="flex items-center gap-2 md:gap-3">
-                      <span className="text-xs md:text-sm text-fuchsia-600">{chapter.chapterContent.length} Lectures</span>
+                      <span className="text-xs md:text-sm text-orange-600">{chapter.chapterContent.length} Lectures</span>
                       <button
                         type="button"
                         onClick={() => handleChapter('remove', chapter.chapterId)}
-                        className="p-1 hover:bg-fuchsia-100 rounded-full transition-colors"
+                        className="p-1 hover:bg-orange-100 rounded-full transition-colors"
                       >
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M18 6L6 18M6 6L18 18" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -268,19 +263,19 @@ const AddCourse = () => {
                       {chapter.chapterContent.length > 0 ? (
                         <div className="space-y-2 mb-3 md:mb-4">
                           {chapter.chapterContent.map((lecture, lectureIndex) => (
-                            <div key={lectureIndex} className='flex justify-between items-center p-2 md:p-3 bg-fuchsia-50/50 rounded-lg'>
+                            <div key={lectureIndex} className='flex justify-between items-center p-2 md:p-3 bg-orange-50/50 rounded-lg'>
                               <div className="flex items-center gap-2 overflow-hidden">
-                                <span className="min-w-5 h-5 md:w-6 md:h-6 flex items-center justify-center bg-fuchsia-200 text-fuchsia-700 rounded-full text-xs font-medium flex-shrink-0">
+                                <span className="min-w-5 h-5 md:w-6 md:h-6 flex items-center justify-center bg-orange-200 text-orange-700 rounded-full text-xs font-medium flex-shrink-0">
                                   {lectureIndex + 1}
                                 </span>
                                 <div className="overflow-hidden">
-                                  <span className="font-medium text-xs md:text-sm text-fuchsia-900 block truncate max-w-32 sm:max-w-full">{lecture.lectureTitle}</span>
-                                  <div className="flex items-center text-xs text-fuchsia-600 mt-0.5 md:mt-1 gap-1 md:gap-3 flex-wrap">
+                                  <span className="font-medium text-xs md:text-sm text-orange-900 block truncate max-w-32 sm:max-w-full">{lecture.lectureTitle}</span>
+                                  <div className="flex items-center text-xs text-orange-600 mt-0.5 md:mt-1 gap-1 md:gap-3 flex-wrap">
                                     <span>{lecture.lectureDuration} mins</span>
                                     <span className="hidden xs:inline">•</span>
                                     {lecture.isPreviewFree ? 
                                       <a href={lecture.lectureUrl} target='_blank' className='text-blue-700 hover:underline text-xs'>Watch Now</a> : 
-                                      <span className='text-fuchsia-800 text-xs'>Enroll to watch</span>
+                                      <span className='text-orange-800 text-xs'>Enroll to watch</span>
                                     }
                                   </div>
                                 </div>
@@ -289,7 +284,7 @@ const AddCourse = () => {
                               <button
                                 type="button"
                                 onClick={() => handleLecture('remove', chapter.chapterId, lectureIndex)}
-                                className="p-1 hover:bg-fuchsia-100 rounded-full transition-colors flex-shrink-0 ml-1"
+                                className="p-1 hover:bg-orange-100 rounded-full transition-colors flex-shrink-0 ml-1"
                               >
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M18 6L6 18M6 6L18 18" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -299,14 +294,14 @@ const AddCourse = () => {
                           ))}
                         </div>
                       ) : (
-                        <div className="text-center py-3 md:py-4 text-fuchsia-500 text-xs md:text-sm">
+                        <div className="text-center py-3 md:py-4 text-orange-500 text-xs md:text-sm">
                           No lectures added yet
                         </div>
                       )}
 
                       <button
                         type="button"
-                        className='inline-flex items-center gap-1 md:gap-2 bg-fuchsia-100 hover:bg-fuchsia-200 text-fuchsia-700 px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-colors'
+                        className='inline-flex items-center gap-1 md:gap-2 bg-orange-100 hover:bg-orange-200 text-orange-700 px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-colors'
                         onClick={() => handleLecture('add', chapter.chapterId)}
                       >
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -322,19 +317,17 @@ const AddCourse = () => {
 
             <button
               type="button"
-              className='flex items-center justify-center gap-1 md:gap-2 w-full bg-fuchsia-100 hover:bg-fuchsia-200 text-fuchsia-700 py-2 md:py-3 rounded-lg mt-3 md:mt-4 font-medium text-sm md:text-base cursor-pointer'
+              className='flex items-center justify-center gap-1 md:gap-2 w-full bg-orange-100 hover:bg-orange-200 text-orange-700 py-2 md:py-3 rounded-lg mt-3 md:mt-4 font-medium text-sm md:text-base cursor-pointer'
               onClick={() => handleChapter('add')}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19M5 12H19" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <PlusIcon className='size-4'/>
               Add Chapter
             </button>
           </div>
 
           <button
             type="submit"
-            className='bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-medium py-2.5 md:py-3 rounded-lg mt-3 md:mt-4 shadow-sm text-sm md:text-base cursor-pointer'
+            className='bg-orange-600 hover:bg-orange-700 text-white font-medium py-2.5 md:py-3 rounded-lg mt-3 md:mt-4 shadow-sm text-sm md:text-base cursor-pointer'
           >
             Create Course
           </button>
@@ -343,15 +336,15 @@ const AddCourse = () => {
 
       {/* Add Lecture Modal */}
       {showPopup && (
-        <div className='fixed inset-0 flex items-center justify-center bg-fuchsia-900/20 backdrop-blur-sm z-50 p-4'>
-          <div className='bg-white text-fuchsia-900 p-4 md:p-6 rounded-xl shadow-xl relative w-full max-w-md'>
+        <div className='fixed inset-0 flex items-center justify-center bg-orange-900/20 backdrop-blur-sm z-50 p-4'>
+          <div className='bg-white text-orange-900 p-4 md:p-6 rounded-xl shadow-xl relative w-full max-w-md'>
             <h2 className='text-lg md:text-xl font-bold mb-4 md:mb-6'>Add New Lecture</h2>
 
             <div className='mb-3 md:mb-4'>
               <label className="block text-xs md:text-sm font-medium mb-1">Lecture Title</label>
               <input
                 type="text"
-                className='w-full border border-fuchsia-200 rounded-lg py-2 md:py-2.5 px-3 text-sm focus:outline-none focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-100'
+                className='w-full border border-orange-200 rounded-lg py-2 md:py-2.5 px-3 text-sm focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100'
                 value={lectureDetails.lectureTitle}
                 onChange={(e) => setLectureDetails({ ...lectureDetails, lectureTitle: e.target.value })}
                 placeholder="Enter lecture title"
@@ -362,7 +355,7 @@ const AddCourse = () => {
               <label className="block text-xs md:text-sm font-medium mb-1">Duration (minutes)</label>
               <input
                 type="number"
-                className='w-full border border-fuchsia-200 rounded-lg py-2 md:py-2.5 px-3 text-sm focus:outline-none focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-100'
+                className='w-full border border-orange-200 rounded-lg py-2 md:py-2.5 px-3 text-sm focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100'
                 value={lectureDetails.lectureDuration}
                 onChange={(e) => setLectureDetails({ ...lectureDetails, lectureDuration: e.target.value })}
                 placeholder="Enter duration in minutes"
@@ -373,7 +366,7 @@ const AddCourse = () => {
               <label className="block text-xs md:text-sm font-medium mb-1">Lecture URL</label>
               <input
                 type="text"
-                className='w-full border border-fuchsia-200 rounded-lg py-2 md:py-2.5 px-3 text-sm focus:outline-none focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-100'
+                className='w-full border border-orange-200 rounded-lg py-2 md:py-2.5 px-3 text-sm focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100'
                 value={lectureDetails.lectureUrl}
                 onChange={(e) => setLectureDetails({ ...lectureDetails, lectureUrl: e.target.value })}
                 placeholder="Enter lecture URL"
@@ -384,7 +377,7 @@ const AddCourse = () => {
               <input
                 type="checkbox"
                 id="freePreview"
-                className='w-4 h-4 md:w-5 md:h-5 rounded border-fuchsia-300 text-fuchsia-600 focus:ring-fuchsia-500'
+                className='w-4 h-4 md:w-5 md:h-5 rounded border-orange-300 text-orange-600 focus:ring-orange-500'
                 checked={lectureDetails.isPreviewFree}
                 onChange={(e) => setLectureDetails({ ...lectureDetails, isPreviewFree: e.target.checked })}
               />
@@ -394,7 +387,7 @@ const AddCourse = () => {
             <div className="flex gap-2 md:gap-3">
               <button
                 type='button'
-                className='w-full bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-medium py-2 md:py-2.5 px-3 md:px-4 rounded-lg text-sm'
+                className='w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 md:py-2.5 px-3 md:px-4 rounded-lg text-sm'
                 onClick={addLectures}
               >
                 Add Lecture
@@ -412,7 +405,7 @@ const AddCourse = () => {
             <button
               type="button"
               onClick={() => setShowPopup(false)}
-              className='absolute top-3 right-3 md:top-4 md:right-4 p-1 hover:bg-fuchsia-100 rounded-full transition-colors'
+              className='absolute top-3 right-3 md:top-4 md:right-4 p-1 hover:bg-orange-100 rounded-full transition-colors'
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18M6 6L18 18" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
