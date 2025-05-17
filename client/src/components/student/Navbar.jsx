@@ -37,9 +37,9 @@ const Navbar = () => {
         }
     }
     return (
-        <div className={`flex items-center justify-between px-4 sm:px-10 md:px-14 lg:px-25 py-4`}>
+        <div className={`flex items-center justify-between px-4 sm:px-10 md:px-14 lg:px-25 py-4 `}>
             <div onClick={() => navigate('/')} className="flex items-center space-x-3 cursor-pointer">
-                <div className={`flex items-center justify-center bg-gradient-to-tl from-black to-orange-900 via-orange-900 text-white p-1 rounded-lg shadow-md transition-all duration-300 hover:scale-115`}>
+                <div className={`flex items-center justify-center bg-gradient-to-tl from-black to-orange-900 via-orange-900 text-white p-1 rounded-lg shadow-md transition-all duration-300 hover:scale-115 md:hover:scale-125 md:mt-3 md:scale-115 `}>
                     <BookOpen size={20} className="mr-1" />
                     <span className="font-semibold text-lg font-mono">L</span>
                 </div>
