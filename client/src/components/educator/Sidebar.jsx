@@ -13,7 +13,7 @@ const Sidebar = () => {
   ];
   
   return isEducator && (
-    <div className="md:w-65 lg:w-72 w-20 min-h-screen text-base py-4 flex flex-col bg-gradient-to-br from-orange-900 via-orange-700 to-orange-500 shadow-lg">
+    <div className="md:w-65 lg:w-72 w-20 min-h-screen text-base py-4 flex flex-col bg-gradient-to-br from-orange-700 via-orange-600 to-orange-500 shadow-lg">
       <div className="px-4 mb-6">
         <h2 className="text-white font-bold text-xl md:block hidden">Educator Dashboard</h2>
       </div>

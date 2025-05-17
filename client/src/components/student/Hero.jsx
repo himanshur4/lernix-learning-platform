@@ -5,13 +5,13 @@ const Hero = () => {
 const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setAnimate(true), 200); // slight delay to trigger animation
+    setTimeout(() => setAnimate(true), 300); // slight delay to trigger animation
   }, []);
 
   const animationStyle = {
     opacity: animate ? 1 : 0,
     transform: animate ? 'translateY(0)' : 'translateY(20px)',
-    transition: 'opacity 1s ease, transform 1s ease',
+    transition: 'opacity 1s ease, transform 3s ease',
   };
 
   return (<>
