@@ -10,7 +10,7 @@ const NavbarEdu = () => {
   const { user } = useUser()
   const { navigate } = useContext(AppContext)
   return (
-    <div className="bg-gradient-to-l from-orange-700 via-orange-500 to-orange-500 w-full">
+    <div className="bg-gradient-to-l from-orange-900 via-orange-600 to-orange-400 w-full">
       <div className="flex items-center justify-between h-16 px-4 md:px-6 w-full">
 
         <div onClick={() => navigate('/')} className="flex items-center space-x-3 cursor-pointer">
