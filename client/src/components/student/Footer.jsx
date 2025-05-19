@@ -1,5 +1,3 @@
-import React from 'react'
-import assets from '../../assets/assets'
 import { BookOpen } from 'lucide-react'
 
 const Footer = () => {
