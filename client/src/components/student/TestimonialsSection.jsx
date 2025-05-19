@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
     <p className='md:text-base text-gray-500 mt-3'>Hear from our learners as they share their journeys of transformation, success, and how our<br/>platform has made a difference in their lives.</p>
     <div className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 mt-14'>
       {dummyTestimonial.map((testimonial,index)=>(
-        <div key={index} className='text-sm text-left pb-4 bg-white overflow-hidden border border-gray-600/20 rounded-3xl transition-transform duration-300 hover:-translate-y-1 hover:drop-shadow-2xl'>
+        <div key={index} className='text-sm text-left pb-4 bg-white overflow-hidden border border-gray-600/20 rounded-3xl transition-transform duration-300 hover:-translate-y-0.5 hover:drop-shadow-xl'>
           <div className='flex items-center gap-4 px-5 py-4 bg-gray-500/10'>
             <img className='h-12 w-12 rounded-full' src={testimonial.image} alt={testimonial.name} />
             <div>
