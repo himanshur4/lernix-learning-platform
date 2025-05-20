@@ -1,28 +1,5 @@
 # Lernix – Learning Platform
 
-Lernix is a full-featured e-learning platform built to deliver a smooth and engaging learning experience. It allows users to browse, enroll in, and rate various educational courses while enabling admins to manage course content and users seamlessly.
-
-## 🧭 Getting Started
-
-1. Clone the repo:
-
-   ```bash
-   git clone https://github.com/himanshur4/lernix-learning-platform.git
-   ```
-2. Install dependencies:
-
-   ```bash
-   cd client && npm install
-   cd ../server && npm install
-   ```
-3. Set up environment variables in `.env` files in both `client` and `server`.
-4. Start the development servers:
-
-   ```bash
-   cd server && npm run dev
-   cd ../client && npm run dev
-   ```
-
 ---
 ## 🚀 Features
 
@@ -78,14 +55,24 @@ Lernix is a full-featured e-learning platform built to deliver a smooth and enga
 
 ---
 
+## 🧭 Installation and setup
 
+1.
 
+   ```bash
+   git clone https://github.com/himanshur4/lernix-learning-platform.git
+   ```
+2. ```bash
+   cd client && npm install
+   cd ../server && npm install
+   ```
+3. Set up environment variables in `.env` files in both `client` and `server`.
+4. Start the development servers:
+
+   ```bash
+   cd server && npm run dev
+   cd ../client && npm run dev
+   ```
 ---
 
-
-## 🙌 Contributing
-
-Feel free to open issues or pull requests. Contributions are always welcome!
-
----
 
