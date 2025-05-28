@@ -8,6 +8,7 @@ export const AppContext = createContext()
 
 export const AppContextProvider = (props) => {
     const currency = import.meta.env.VITE_CURRENCY
+
     const backendUrl = import.meta.env.VITE_BACKEND_URL
     const navigate = useNavigate()
     const { getToken } = useAuth()
