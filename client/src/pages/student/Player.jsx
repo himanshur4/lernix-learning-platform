@@ -131,7 +131,7 @@ const Player = () => {
                                 ...lecture, chapter: index + 1, lecture: i + 1
 
                               })}
-                                className='text-fuchsia-500 cursor-pointer'>Watch</p>}
+                                className='text-orange-500 cursor-pointer'>Watch</p>}
                               <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, { units: ['h', 'm'] })}</p>
                             </div>
                           </div>
