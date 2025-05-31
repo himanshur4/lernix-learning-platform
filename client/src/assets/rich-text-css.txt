@@ -1,6 +1,6 @@
-.rich-text { font-size: 15px; color: #7A7B7D; }
+.rich-text { font-size: 15px; }
 
-.rich-text p { margin-bottom: 16px; }
+.rich-text p { margin-bottom: 16px;}
 
 .rich-text h1 { font-size: 36px; font-weight: 800; color: #252525; margin: 32px 0; }
 
@@ -10,9 +10,9 @@
 
 .rich-text h4 { font-size: 16px; font-weight: 500; color: #444444; margin: 16px 0; }
 
-.rich-text h5 { font-size: 14px; font-weight: 400; color: #555555; margin: 12px 0; }
+.rich-text h5 { font-size: 14px; font-weight: 400; color:rgb(20, 20, 20); margin: 12px 0; }
 
-.rich-text h6 { font-size: 12px; font-weight: 400; color: #666666; margin: 8px 0; }
+.rich-text h6 { font-size: 12px; font-weight: 400; color:rgb(15, 10, 10); margin: 8px 0; }
 
 .rich-text strong { font-weight: 700; }
 

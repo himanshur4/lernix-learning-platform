@@ -48,7 +48,7 @@ const Navbar = () => {
             <div className='hidden md:flex items-center gap-4 text-white'>
                 <div className='flex items-center gap-3 '>
                     {user && <>
-                        <button className='cursor-pointer bg-orange-600 p-2 rounded-3xl  transition-transform duration-300 hover:-translate-x-1 hover:drop-shadow-2xl hover:scale-115' onClick={becomeEducator}>{isEducator ? 'Educator dashboard' : 'Become Educator'}</button>|
+                        <button className='cursor-pointer bg-orange-600 p-2 rounded-3xl  transition-transform duration-300 hover:-translate-x-1 hover:drop-shadow-2xl hover:scale-115' onClick={becomeEducator}>{isEducator ? 'Educator dashboard' : 'Become Educator'}</button><span className='text-black text-2xl'>|</span>
                         <Link to='/my-enrollments' className='cursor-pointer bg-orange-600 p-2 rounded-3xl transition-transform duration-300 hover:-translate-x-1 hover:drop-shadow-2xl hover:scale-115 '>My Enrollments</Link>
                     </>}
                 </div>
@@ -59,13 +59,14 @@ const Navbar = () => {
                 <div className='flex items-center sm:gap-0.5 max-sm:text-xs'>
                     {user &&
                         <>
-                            <button className='cursor-pointer bg-orange-600 p-1 rounded-3xl transition-transform duration-300 hover:-translate-x-1 hover:drop-shadow-2xl hover:scale-115' onClick={becomeEducator}>{isEducator ? 'Educator dashboard' : 'Become Educator'}</button>|
-                            <Link to='/my-enrollments' className='cursor-pointer bg-orange-600 p-1 rounded-3xl transition-transform duration-300 hover:-translate-x-0.5 hover:drop-shadow-2xl hover:scale-115'>My Enrollments</Link>
+                            <button className='cursor-pointer bg-orange-600 p-1 rounded-3xl transition-transform duration-300 hover:-translate-x-1 hover:drop-shadow-2xl hover:scale-115' onClick={becomeEducator}>{isEducator ? 'Educator dashboard' : 'Become Educator'}</button>
+                            <Link to='/my-enrollments' className='cursor-pointer bg-orange-600 p-1 rounded-3xl transition-transform duration-300 hover:-translate-x-0.5 hover:drop-shadow-2xl hover:scale-115 ml-2'>My Enrollments</Link>
                         </>
                     }
                 </div>
-                {user ? <UserButton /> : <button onClick={() => openSignIn()}>
-                    <img src={assets.user_icon} alt="loginIcon" className='cursor-pointer hover:scale-115' />
+                {user ? <UserButton /> : <button onClick={() => openSignIn()} className='flex-col justify-center items-center'>
+                    <img src={assets.user_icon} alt="loginIcon" className='cursor-pointer hover:scale-115 ml-2.5' />
+                    <span className='text-black font-mono font-semibold text-xs'>Sign Up</span>
                 </button>}
 
             </div>

@@ -15,35 +15,35 @@ const CourseDetails = () => {
   const [isAlreadyEnrolled, setIsAlreadyEnrolled] = useState(false)
   const [playerData, setPlayerData] = useState(null)
 
-  const { allCourses, calculateRating, calculateNoOfLectures, calculateCourseDuration, calculateChapterTime, currency ,backendUrl,userData,getToken} = useContext(AppContext)
+  const { allCourses, calculateRating, calculateNoOfLectures, calculateCourseDuration, calculateChapterTime, currency, backendUrl, userData, getToken } = useContext(AppContext)
   const fetchCourseData = async () => {
     try {
-      const {data}=await axios.get(backendUrl+'/api/course/'+id)
-      if(data.success){
+      const { data } = await axios.get(backendUrl + '/api/course/' + id)
+      if (data.success) {
         setCourseData(data.courseData)
       }
-      else{
+      else {
         toast.error(data.message)
       }
     } catch (error) {
       toast.error(error.message)
     }
   }
-  const enrollCourse=async()=>{
+  const enrollCourse = async () => {
     try {
-      if(!userData){
+      if (!userData) {
         return toast.warn('Login to Enroll')
       }
-      if(isAlreadyEnrolled){
+      if (isAlreadyEnrolled) {
         return toast.warn('Already Enrolled')
       }
-      const token=await getToken()
-      const {data}=await axios.post(backendUrl+'/api/user/purchase',{courseId:courseData._id},{headers:{Authorization:`Bearer ${token}`}})
-      if(data.success){
-        const {session_url}=data
+      const token = await getToken()
+      const { data } = await axios.post(backendUrl + '/api/user/purchase', { courseId: courseData._id }, { headers: { Authorization: `Bearer ${token}` } })
+      if (data.success) {
+        const { session_url } = data
         window.location.replace(session_url)
       }
-      else{
+      else {
         toast.error(data.message)
       }
 
@@ -55,10 +55,10 @@ const CourseDetails = () => {
     fetchCourseData()
   }, [])
   useEffect(() => {
-    if(userData && courseData){
+    if (userData && courseData) {
       setIsAlreadyEnrolled(userData.enrolledCourses.includes(courseData._id))
     }
-  }, [userData,courseData])
+  }, [userData, courseData])
   const toggleSection = (index) => {
     setOpenSections((prev) => (
       {
@@ -72,7 +72,7 @@ const CourseDetails = () => {
       <div className='flex md:flex-row flex-col-reverse gap-10 relative items-start justify-between md:px-36 px-8 md:pt-30 pt-20 text-left shaadow-lg rounded-2xl'>
         <div className='absolute top-0 left-0 w-full h-[500px] '></div>
         {/*left Column  */}
-        <div className='max-w-xl z-10 text-gray-500'>
+        <div className='max-w-xl z-10 text-gray-700'>
           <h1 className='text-[26px] md:text-[36px] lg:text-[44px] font-semibold text-gray-900'>{courseData.courseTitle}</h1>
           <p className='pt-4 md:text-base text-sm' dangerouslySetInnerHTML={{ __html: courseData.courseDescription.slice(0, 200) }}></p>
           {/* review and ratings */}
@@ -104,7 +104,7 @@ const CourseDetails = () => {
 
                     </div>
                     <div className={`overflow-hidden transition-all duration-300 ${openSections[index] ? 'max-h-96' : 'max-h-0'}`}>
-                      <ul className='list-disc md:pl-10 pl-4 pr-4 py-2 text-gray-600 border-t border-gray-300'>
+                      <ul className='list-disc md:pl-10 pl-4 pr-4 py-2 text-gray-700 border-t border-gray-300'>
 
                         {chapter.chapterContent.map((lecture, i) => (
                           <li key={i} className='flex items-start gap-2 py-1'>
@@ -134,7 +134,7 @@ const CourseDetails = () => {
 
           <div className='py-20 text-sm md:text-default'>
             <h3 className='text-xl font-semibold text-gray-800'>Course Description</h3>
-            <p className='pt-3 rich-text' dangerouslySetInnerHTML={{ __html: courseData.courseDescription }}></p>
+            <p className='pt-3 rich-text text-gray-900' dangerouslySetInnerHTML={{ __html: courseData.courseDescription }}></p>
           </div>
 
         </div>
@@ -193,7 +193,7 @@ const CourseDetails = () => {
             <button onClick={enrollCourse} className='md:mt-6 mt-4 w-full py-3  bg-orange-600 rounded-2xl text-white font-medium hover:transition-all hover:duration-200 cursor-pointer hover:bg-orange-700'>{isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
             <div className='pt-6' >
               <p className='md:text-xl text-lg font-medium text-gray-800' >What's in the course?</p>
-              <ul className='ml-4 pt-2 text-sm md:text-default list-disc text-gray-500' >
+              <ul className='ml-4 pt-2 text-sm md:text-default list-disc text-gray-700' >
                 <li>Lifetime access with free updates.</li>
                 <li>
                   Step-by-step, hands-on project guidance.

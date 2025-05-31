@@ -10,7 +10,8 @@ import courseRouter from './routes/courseRoute.js'
 import userRouter from './routes/userRoutes.js'
 
 
-const app=express()
+const app=express();
+const PORT=process.env.PORT || 5000;
 await connectDB()
 await connectCloudinary()
 //middlewares
@@ -29,7 +30,7 @@ app.use('/api/course',express.json(),courseRouter)
 app.use('/api/user',express.json(),userRouter)
 app.post('/stripe',express.raw({type:'application/json'}),stripeWebhooks)
 
-const PORT=process.env.PORT || 5000
+
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`)
 })
