@@ -4,7 +4,7 @@ import assets from '../../assets/assets'
 import { Link } from 'react-router-dom'
 
 const CourseCard = ({ course }) => {
-  const { currency, calculateRating } = useContext(AppContext)
+  const {  calculateRating } = useContext(AppContext)
   return (
   
       <Link to={'/course/' + course._id} onClick={() => scrollTo(0, 0,)} className='border border-gray-500/30 pb-6 overflow-hidden rounded-3xl shadow-md bg-white transition-transform duration-400 hover:-translate-y-2 hover:drop-shadow-2xl hover:scale-105'>
@@ -27,7 +27,7 @@ const CourseCard = ({ course }) => {
             </div>
             <p className='text-gray-500'>{course.courseRatings.length}</p>
           </div>
-          <p className='text-base font-semibold text-gray-800'>{currency}{(course.coursePrice - course.discount * course.coursePrice / 100).toFixed(2)}</p>
+          <p className='text-base font-semibold text-gray-800'>${(course.coursePrice - course.discount * course.coursePrice / 100).toFixed(2)}</p>
         </div>
       </Link>
   

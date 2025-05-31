@@ -15,7 +15,7 @@ const CourseDetails = () => {
   const [isAlreadyEnrolled, setIsAlreadyEnrolled] = useState(false)
   const [playerData, setPlayerData] = useState(null)
 
-  const { allCourses, calculateRating, calculateNoOfLectures, calculateCourseDuration, calculateChapterTime, currency, backendUrl, userData, getToken } = useContext(AppContext)
+  const { allCourses, calculateRating, calculateNoOfLectures, calculateCourseDuration, calculateChapterTime, backendUrl, userData, getToken } = useContext(AppContext)
   const fetchCourseData = async () => {
     try {
       const { data } = await axios.get(backendUrl + '/api/course/' + id)
@@ -162,10 +162,10 @@ const CourseDetails = () => {
             </div>
             <div className='flex gap-3 items-center pt-2'>
               <p className='text-gray-800 md:text-4xl text-2xl font-semibold'>
-                {currency}{(courseData.coursePrice - courseData.discount * courseData.coursePrice / 100).toFixed(2)}
+                ${(courseData.coursePrice - courseData.discount * courseData.coursePrice / 100).toFixed(2)}
               </p>
               <p className='md:text-lg text-gray-500 line-through'>
-                {currency}{courseData.coursePrice}
+                ${courseData.coursePrice}
               </p>
               <p className='md:text-lg text-gray-500 '>
                 {courseData.discount}% off
