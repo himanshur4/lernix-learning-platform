@@ -48,7 +48,7 @@ const Navbar = () => {
             <div className='hidden md:flex items-center gap-4 text-white'>
                 <div className='flex items-center gap-3 '>
                     {user && <>
-                        <button className='cursor-pointer bg-orange-600 p-2 rounded-3xl  transition-transform duration-300 hover:-translate-x-1 hover:drop-shadow-2xl hover:scale-115' onClick={becomeEducator}>{isEducator ? 'Educator dashboard' : 'Become Educator'}</button><span className='text-black text-2xl'>|</span>
+                        <button className='cursor-pointer bg-orange-600 p-2 rounded-3xl  transition-transform duration-300 hover:-translate-x-1 hover:drop-shadow-2xl hover:scale-115' onClick={becomeEducator}>{isEducator ? 'Educator dashboard' : 'Become Educator'}</button>
                         <Link to='/my-enrollments' className='cursor-pointer bg-orange-600 p-2 rounded-3xl transition-transform duration-300 hover:-translate-x-1 hover:drop-shadow-2xl hover:scale-115 '>My Enrollments</Link>
                     </>}
                 </div>
