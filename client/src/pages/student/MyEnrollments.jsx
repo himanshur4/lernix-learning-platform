@@ -108,6 +108,7 @@ const MyEnrollments = () => {
                         className='px-4 py-2 bg-orange-600 text-white rounded-3xl hover:bg-orange-700 transition-colors cursor-pointer'
                         onClick={() => navigate('/player/' + course._id)}
                       >
+                        
                         {progressArray[index] && progressArray[index].lectureCompleted / progressArray[index].totalLectures === 1 ? 'Completed' : 'Ongoing...'}
                       </button>
                     </td>

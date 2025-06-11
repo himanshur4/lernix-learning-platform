@@ -143,7 +143,7 @@ const CourseDetails = () => {
 
 
         {/* right column */}
-        <div className='max-w-[424px] z-10 shadow-[0px,4px,15px,2px rgba(0,0,0,0.1)] rounded-4xl overflow-hidden bg-white shadow-xl min-w-[300px] sm:min-w-[420px] transition-transform duration-300 hover:-translate-y-1 hover:drop-shadow-2xl cursor-pointer'>
+        <div className='max-w-[424px] z-10 shadow-[0px,4px,15px,2px rgba(0,0,0,0.1)] rounded-4xl overflow-hidden bg-white shadow-xl min-w-[300px] sm:min-w-[420px] transition-transform duration-500 hover:-translate-y-1 hover:drop-shadow-xl cursor-pointer'>
           {
             playerData ?
               <YouTube videoId={playerData.videoId} opts={{ playerVars: { autoplay: 1 } }} iframeClassName='w-full aspect-video' />
