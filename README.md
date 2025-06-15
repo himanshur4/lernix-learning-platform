@@ -83,10 +83,7 @@ VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 
 ## 📸 Screenshots
 
-![image](https://github.com/user-attachments/assets/39608005-0caa-4487-bbbe-a99f15da65f8)
 ![image](https://github.com/user-attachments/assets/eb87bc26-78fc-45ac-94e7-50d74ee3c700)
-![image](https://github.com/user-attachments/assets/96bee059-6bed-43a2-93a0-a5bbb84f4306)
-![image](https://github.com/user-attachments/assets/eafc069d-d5d2-42ae-b56e-1db8049cd14f)
 ![image](https://github.com/user-attachments/assets/0bbb6901-2251-4025-b899-e827c5aaf103)
 
 
