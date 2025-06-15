@@ -87,14 +87,6 @@ VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 ![image](https://github.com/user-attachments/assets/0bbb6901-2251-4025-b899-e827c5aaf103)
 
 
----
-
-## 📁 Folder Structure
-
-```
-/client         # React frontend (Clerk + Stripe)
-/server         # Express backend (MongoDB + Stripe)
-```
 
 ---
 
