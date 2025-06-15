@@ -2,7 +2,7 @@
 
 **Lernix** is a full-stack learning platform that allows users to browse and purchase courses, track progress, and access educational content. It features secure Clerk authentication, Stripe-powered payments, and seamless contextual state management.
 
-### 🌐 Live Demo: https://lernix-psi-two.vercel.app
+#### 🌐 Live Demo: https://lernix-psi-two.vercel.app
 ---
 
 ## 🚀 Features
