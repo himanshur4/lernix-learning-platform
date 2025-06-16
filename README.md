@@ -13,7 +13,7 @@
 * 💳 Secure payments using **Stripe**
 * ☁️ **Cloudinary** integration for course media upload and delivery
 * 📚 Browse and enroll in courses
-* 📝 Create your own courses with multimedia support
+* 📝 Create your own courses
 * 💡 Modern, responsive UI with smooth user experience
 
 ---
