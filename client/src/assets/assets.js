@@ -38,9 +38,6 @@ import patients_icon from './patients_icon.svg'
 import play_icon from './play_icon.svg'
 import blue_tick_icon from './blue_tick_icon.svg'
 import course_4 from './course_4.png'
-import profile_img from './profile_img.png'
-import profile_img2 from './profile_img2.png'
-import profile_img3 from './profile_img3.png'
 import lesson_icon from './lesson_icon.svg'
 
 
@@ -60,9 +57,6 @@ const assets = {
     course_4_thumbnail,
     star,
     star_blank,
-    profile_img_1,
-    profile_img_2,
-    profile_img_3,
     arrow_icon,
     dropdown_icon,
     cross_icon,
@@ -84,9 +78,6 @@ const assets = {
     appointments_icon,
     earning_icon,
     patients_icon,
-    profile_img,
-    profile_img2,
-    profile_img3,
     play_icon,
     blue_tick_icon,
     lesson_icon
@@ -103,20 +94,21 @@ export const dummyEducatorData = {
 }
 
 export const dummyTestimonial = [
-    {
-        name: 'Ramesh Shiddhanth',
-        role: 'SWE 1 @ Amazon',
-        image: 'testimoniial1.png',
-        rating: 5,
-        feedback: 'This platform made learning so convenient. I completed the Full Stack Web Development course in 3 months and landed my dream job!',
-    },
+    
     {
         name: 'Richard Nelson',
         role: 'SWE 2 @ Samsung',
         image: 'test2.png',
         rating: 4,
         feedback: 'The instructors are top-notch and the content is super engaging. I never thought online learning could feel this personal.',
+    },{
+        name: 'Aarav Sharma',
+        role: 'SWE 1 @ Amazon',
+        image: 'testimoniial1.png',
+        rating: 5,
+        feedback: 'This platform made learning so convenient. I completed the Full Stack Web Development course in 3 months and landed my dream job!',
     },
+    
     {
         name: 'Anna Watson',
         role: 'SWE 2 @ Google',
