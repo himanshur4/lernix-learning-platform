@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import Navbar from './components/student/Navbar';
 import Loading from './components/student/Loading';
 import "quill/dist/quill.snow.css";
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 
 const Home = lazy(() => import('./pages/student/Home'));
 const CoursesList = lazy(() => import('./pages/student/CoursesList'));

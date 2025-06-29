@@ -13,8 +13,8 @@ const Loading = () => {
     }
   },[])
   return (
-    <div className='min-h-screen flex items-center justify-center'>
-      <div className='w-16 sm:w-20 aspect-square border-4 border-gray-300 border-t-4 border-t-orange-600 rounded-full animate-spin'></div>
+    <div className='min-h-3/4 flex items-center justify-center'>
+      <div className='w-12 sm:w-20 aspect-square border-4 border-gray-300 border-t-4 border-t-orange-600 rounded-full animate-spin'></div>
     </div>
   )
 }
