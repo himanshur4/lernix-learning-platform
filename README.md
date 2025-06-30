@@ -69,7 +69,6 @@ npm run dev
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 STRIPE_SECRET_KEY=your_stripe_secret_key
-CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 ```
@@ -97,13 +96,6 @@ VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 * Used to upload and manage course thumbnails, previews, and videos
 * Ensures optimized, fast-loading media content with built-in CDN support
 * Media files are stored securely and fetched dynamically across the platform
-
----
-
-## 📸 Screenshots
-
-![image](https://github.com/user-attachments/assets/eb87bc26-78fc-45ac-94e7-50d74ee3c700)
-![image](https://github.com/user-attachments/assets/0bbb6901-2251-4025-b899-e827c5aaf103)
 
 ---
 
