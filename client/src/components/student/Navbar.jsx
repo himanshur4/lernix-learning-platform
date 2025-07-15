@@ -37,7 +37,7 @@ const Navbar = () => {
         }
     }
     return (
-        <div className={`flex items-center justify-between px-4 sm:px-10 md:px-14 lg:px-25 py-3 border-b-1 border-b-orange-950`}>
+        <div className={`flex items-center justify-between px-4 sm:px-10 md:px-14 lg:px-25 py-3 border-b-1`}>
             <div onClick={() => navigate('/')} className="flex items-center space-x-3 cursor-pointer">
                 <div className={`flex items-center justify-center bg-gradient-to-tl from-black to-orange-900 via-orange-900 text-white p-1 rounded-lg shadow-md transition-all duration-300 hover:scale-115 md:hover:scale-125 md:mt-3 md:scale-115 `}>
                     <BookOpen size={20} className="mr-1" />
@@ -55,7 +55,7 @@ const Navbar = () => {
                 {user ? <UserButton /> : <button onClick={() => openSignIn()} className='bg-gradient-to-br from-orange-950 to-orange-800 text-white px-5 py-2 rounded-2xl cursor-pointer transition-transform duration-300 hover:-translate-x-2 hover:shadow-2xl hover:scale-110'>Create Account</button>}
             </div>
             {/* for phone screen */}
-            <div className='md:hidden flex items-center gap-2 sm:gap-5 text-sm text-white/90 border-b-amber-950'>
+            <div className='md:hidden flex items-center gap-2 sm:gap-5 text-sm text-white/90'>
                 <div className='flex items-center sm:gap-0.5 max-sm:text-xs'>
                     {user &&
                         <>
