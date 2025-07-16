@@ -1,4 +1,3 @@
-
 import SearchBar from './SearchBar'
 import { useEffect, useState } from 'react';
 const Hero = () => {
@@ -21,7 +20,7 @@ const [animate, setAnimate] = useState(false);
       </h1>
       <p  style={animationStyle} className="md:block hidden text-gray-600 max-w-3/6 mx-auto md:text-xl lg:text-2xl">Learn what matters to you, on your schedule, with expert guidance and practical content.</p>
       <p  style={animationStyle} className='md:hidden text-gray-800 max-w-sm mx-auto text-xl'>
-        Courses that fit your goals, your pace, and your interests, with expert guidance and real support.
+        Courses that fit your goals, your pace, and your interests.
       </p>
       <SearchBar />
       

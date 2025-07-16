@@ -4,7 +4,8 @@ import App from './App.jsx'
 import { AppContextProvider } from './context/AppContext.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { ClerkProvider } from '@clerk/clerk-react'
-//import your publishable key
+
+
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
 if (!PUBLISHABLE_KEY) {
