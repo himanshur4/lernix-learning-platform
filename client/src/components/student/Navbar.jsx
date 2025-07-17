@@ -61,7 +61,7 @@ const Navbar = () => {
                     }
                 </div>
                 {user ? <UserButton /> : <button onClick={() => openSignIn()} className='flex-col justify-center items-center'>
-                    <UserCircle2 size={24}  className='text-black cursor-pointer hover:scale-115 ml-2.5 mb-0' />
+                    <UserCircle2 size={24}  className='text-gray-700 cursor-pointer hover:scale-115 ml-2.5 mb-0' />
                     <span className='text-black font-mono font-semibold text-xs mt-0'>Sign Up</span>
                 </button>}
 

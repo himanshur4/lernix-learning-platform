@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import Loading from '../../components/student/Loading'
@@ -8,6 +8,7 @@ import Footer from '../../components/student/Footer'
 import YouTube from 'react-youtube'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { ChevronDownIcon, PlayCircle } from 'lucide-react'
 const CourseDetails = () => {
   const { id } = useParams()
   const [courseData, setCourseData] = useState(null)
@@ -80,7 +81,7 @@ const CourseDetails = () => {
             <p>{calculateRating(courseData)}</p>
             <div className='flex'>
               {[...Array(5)].map((_, i) => (
-                <img key={i} src={i < Math.floor(calculateRating(courseData)) ? assets.star : assets.star_blank} alt='ratingStar' className='w-3.5 h-3.5' />
+                <img key={i} src={i < Math.floor(calculateRating(courseData)) ? '/rating_star.svg' : '/star_dull_icon.svg'} alt='ratingStar' className='w-3.5 h-3.5' />
               ))}
             </div>
             <p className='text-orange-600'>({courseData.courseRatings.length} {courseData.courseRatings.length > 1 ? 'ratings' : 'rating'})</p>
@@ -95,9 +96,9 @@ const CourseDetails = () => {
               {courseData.courseContent.map((chapter, index) => {
                 return (
                   <div key={index} className='border border-gray-300 bg-white mb-2 rounded'>
-                    <div onClick={() => toggleSection(index)} className='flex items-center justify-between px-4 py-3 cursor-pointer select-none '>
+                    <div onClick={() => toggleSection(index)} className='flex items-center justify-between px-4 py-3 cursor-pointer select-none hover:bg-gray-100 transition-colors duration-200'>
                       <div className='flex items-center gap-2'>
-                        <img className={`transform transition-transform ${openSections[index] ? 'rotate-180' : ''}`} src={assets.down_arrow_icon} alt="arrow icon" />
+                        <ChevronDownIcon size={20} className={`text-gray-500 transition-transform ${openSections[index] ? 'rotate-180' : ''}`} />
                         <p className='font-medium md:text-base text-sm'>{chapter.chapterTitle}</p>
                       </div>
                       <p className='text-sm md:text-default'>{chapter.chapterContent.length} lectures - {calculateChapterTime(chapter)}</p>
@@ -108,7 +109,7 @@ const CourseDetails = () => {
 
                         {chapter.chapterContent.map((lecture, i) => (
                           <li key={i} className='flex items-start gap-2 py-1'>
-                            <img src={assets.play_icon} alt="play icon" className='w-4 h-4 mt-1' />
+                            <PlayCircle size={17} className='text-gray-500' />
                             <div className='flex items-center justify-between w-full text-gray-800 text-xs md:text-default'>
                               <p>
                                 {lecture.lectureTitle}
@@ -140,8 +141,6 @@ const CourseDetails = () => {
         </div>
 
 
-
-
         {/* right column */}
         <div className='max-w-[424px] z-10 shadow-[0px,4px,15px,2px rgba(0,0,0,0.1)] rounded-4xl overflow-hidden bg-white shadow-xl min-w-[300px] sm:min-w-[420px] transition-transform duration-500 hover:-translate-y-1 hover:drop-shadow-xl cursor-pointer'>
           {
@@ -156,8 +155,6 @@ const CourseDetails = () => {
             <div className='flex items-center gap-2'>
 
               <img className='w-3.5' src={assets.time_left_clock_icon} alt="time left clock icon" />
-
-
               <p className='text-red-500' ><span className='font-medium' >5 days</span> left at this price!</p>
             </div>
             <div className='flex gap-3 items-center pt-2'>

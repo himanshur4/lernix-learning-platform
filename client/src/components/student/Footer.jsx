@@ -2,7 +2,7 @@ import { BookOpen } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className='bg-gradient-to-b from-orange-600 to-orange-800 text-white md:px-36 text-left w-full mt-0 text-base'>
+    <footer className='bg-gradient-to-br from-orange-600 to-orange-800 text-white md:px-36 text-left w-full mt-0 text-base'>
       <div className='flex flex-col md:flex-row items-start px-8 md:px-0 justify-center gap-10 md:gap-32 py-10 border-b border-white/30'>
         <div className='flex flex-col md:items-start items-center w-full'>
            <div onClick={() => navigate('/')} className="flex items-center space-x-3 cursor-pointer">
@@ -32,6 +32,7 @@ const Footer = () => {
         </div>
         <div className='hidden md:flex flex-col items-start w-full'>
           <h2 className='font-semibold  mb-5'>Subscribe to our newsletter</h2>
+          
           <p className='text-sm '>The latest news, articles, and resources, sent to your inbox weekly.</p>
           <div className='flex items-center gap-2 pt-4'>
             <input type="email" placeholder='Enter your email' className='border  rounded-3xl border-gray-500 bg-gray-900 text-gray-300 placeholder-gray-400 outline-none w-64 h-9 px-2 text-sm' />

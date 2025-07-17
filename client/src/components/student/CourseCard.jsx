@@ -1,16 +1,14 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
-import assets from '../../assets/assets'
 import { Link } from 'react-router-dom'
 
 const CourseCard = ({ course }) => {
-  const {  calculateRating } = useContext(AppContext)
+  const { currency, calculateRating } = useContext(AppContext)
   return (
-  
-      <Link to={'/course/' + course._id} onClick={() => scrollTo(0, 0,)} className='border border-gray-500/30 pb-6 overflow-hidden rounded-3xl shadow-md bg-white transition-transform duration-500 hover:-translate-y-2 hover:drop-shadow-xl hover:scale-105'>
-        <div className="mb-0 rounded-2xl w-full aspect-[4/3] md:aspect-[16/9]">
+    <Link to={'/course/' + course._id}  className='border border-gray-500/30 pb-6 overflow-hidden rounded-xl shadow-md bg-white transition-transform duration-500 hover:-translate-y-2 hover:drop-shadow-xl hover:scale-105'>
+        <div className="mb-0 rounded-xl w-full aspect-[16/9] md:aspect-[16/9]">
           <img
-            className="object-cover w-full h-full rounded-"
+            className="object-cover w-full h-full rounded-t-lg"
             src={course.courseThumbnail}
             alt="Course Thumbnail"
           />
@@ -22,12 +20,12 @@ const CourseCard = ({ course }) => {
             <p>{calculateRating(course)}</p>
             <div className='flex'>
               {[...Array(5)].map((_, i) => (
-                <img key={i} src={i < Math.floor(calculateRating(course)) ? assets.star : assets.star_blank} alt='ratingStar' className='w-3.5 h-3.5' />
+                <img key={i} src={i < Math.floor(calculateRating(course)) ? '/rating_star.svg' : '/star_dull_icon.svg'} alt='ratingStar' className='w-3.5 h-3.5' />
               ))}
             </div>
             <p className='text-gray-500'>{course.courseRatings.length}</p>
           </div>
-          <p className='text-base font-semibold text-gray-800'>${(course.coursePrice - course.discount * course.coursePrice / 100).toFixed(2)}</p>
+          <p className='text-base font-semibold text-gray-800'>{currency}{(course.coursePrice - course.discount * course.coursePrice / 100).toFixed(2)}</p>
         </div>
       </Link>
   
