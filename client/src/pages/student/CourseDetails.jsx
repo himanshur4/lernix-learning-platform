@@ -2,13 +2,12 @@ import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import Loading from '../../components/student/Loading'
-import assets from '../../assets/assets'
 import humanizeDuration from 'humanize-duration'
 import Footer from '../../components/student/Footer'
 import YouTube from 'react-youtube'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { ChevronDownIcon, PlayCircle } from 'lucide-react'
+import { BookOpenTextIcon, ChevronDownIcon, Clock3Icon, PlayCircle } from 'lucide-react'
 const CourseDetails = () => {
   const { id } = useParams()
   const [courseData, setCourseData] = useState(null)
@@ -153,8 +152,8 @@ const CourseDetails = () => {
 
           <div className='p-5'>
             <div className='flex items-center gap-2'>
-
-              <img className='w-3.5' src={assets.time_left_clock_icon} alt="time left clock icon" />
+              <Clock3Icon size={20} className='text-gray-500' />
+              {/* <img className='w-3.5' src={assets.time_left_clock_icon} alt="time left clock icon" /> */}
               <p className='text-red-500' ><span className='font-medium' >5 days</span> left at this price!</p>
             </div>
             <div className='flex gap-3 items-center pt-2'>
@@ -171,18 +170,19 @@ const CourseDetails = () => {
             <div className="flex items-center text-sm md:text-default gap-4 pt-2 md:pt-4 text-gray-500">
 
               <div className='flex items-center gap-1' >
-                <img src={assets.star} alt="star icon" />
+
+                <img src="/rating_star.svg" alt="star icon" />
                 <p>{calculateRating(courseData)}</p>
               </div>
               <div className='h-4 w-px bg-gray-500/40'>
               </div>                <div className='flex items-center gap-1' >
-                <img src={assets.time_clock_icon} alt="time clock icon" />
+                <Clock3Icon size={16} className='text-gray-500' />
                 <p>{calculateCourseDuration(courseData)}</p>
               </div>
               <div className='h-4 w-px bg-gray-500/40'>
               </div>
               <div className='flex items-center gap-1' >
-                <img src={assets.lesson_icon} alt="time clock icon" />
+                <BookOpenTextIcon size={16} className='text-gray-500' />
                 <p>{calculateNoOfLectures(courseData)} lessons</p>
               </div>
 
