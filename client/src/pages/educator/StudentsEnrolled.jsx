@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Loading from '../../components/student/Loading'
 import { AppContext } from '../../context/AppContext'
 import axios from 'axios'
@@ -39,7 +39,7 @@ const StudentsEnrolled = () => {
   if (isLoading) return <Loading />
 
   return enrolledStudents ? (
-    <div className='min-h-screen flex flex-col items-start justify-between md:p-8 md:pb-0 p-3 pt-6 pb-0 '>
+    <div className='min-h-screen flex flex-col items-start justify-between md:p-8 md:pb-0 p-3 pt-6 pb-0 mb-2'> 
       <div className="w-full max-w-4xl mx-auto">
         <div className="flex flex-col gap-2 mb-4 md:mb-6">
           <h1 className="text-xl md:text-2xl font-bold text-orange-900">Students Enrolled</h1>

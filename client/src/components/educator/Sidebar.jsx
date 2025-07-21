@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
-import assets from '../../assets/assets'
 import { AppContext } from '../../context/AppContext';
 import { NavLink } from 'react-router-dom';
+import { BookOpenCheck, HomeIcon, Plus, UserCheckIcon } from 'lucide-react';
 
 const Sidebar = () => {
   const { isEducator } = useContext(AppContext)
   const menuItems = [
-    { name: 'Dashboard', path: '/educator', icon: assets.home_icon },
-    { name: 'Add Course', path: '/educator/add-course', icon: assets.add_icon },
-    { name: 'My Courses', path: '/educator/my-courses', icon: assets.my_course_icon },
-    { name: 'Student Enrolled', path: '/educator/students-enrolled', icon: assets.person_tick_icon },
+    { name: 'Dashboard', path: '/educator', icon: <HomeIcon /> },
+    { name: 'Add Course', path: '/educator/add-course', icon:<Plus size={20} className="text-white" /> },
+    { name: 'My Courses', path: '/educator/my-courses', icon: <BookOpenCheck size={20} className="text-white" /> },
+    { name: 'Student Enrolled', path: '/educator/students-enrolled', icon:<UserCheckIcon size={20} className="text-white" /> },
   ];
   
   return isEducator && (
@@ -34,7 +34,7 @@ const Sidebar = () => {
             `}
           >
             <div className="flex items-center justify-center w-8 h-10">
-              <img src={item.icon} alt="" className="w-5 h-5 brightness-0 invert opacity-90" />
+             {item.icon}
             </div>
             <p className="md:block hidden text-sm font-medium">{item.name}</p>
           </NavLink>

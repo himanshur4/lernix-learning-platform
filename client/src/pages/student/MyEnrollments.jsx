@@ -135,7 +135,7 @@ const MyEnrollments = () => {
                       </span>
                     </div>
                     <Line
-                      strokeWidth={2}
+                      strokeWidth={1}
                       percent={progressArray[index] ? ((progressArray[index].lectureCompleted * 100) / progressArray[index].totalLectures) : 0}
                       className='bg-gray-300 rounded-full mb-2'
                     />

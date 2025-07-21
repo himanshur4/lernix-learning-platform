@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../context/AppContext'
-import assets from '../../assets/assets'
 import Loading from '../../components/student/Loading'
 import { toast } from 'react-toastify'
 import axios from 'axios'
@@ -38,8 +37,9 @@ const Dashboard = () => {
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5'>
           <div className="flex items-center gap-3 md:gap-4 bg-white p-4 md:p-5 w-full rounded-xl shadow-md border-l-4 border-orange-600 transition-all duration-300 hover:shadow-lg">
+          
             <img
-              src={assets.patients_icon}
+              src='/patients_icon.svg'
               alt="Students icon"
               className="w-6 h-6 md:w-8 md:h-8"
             />
@@ -51,7 +51,7 @@ const Dashboard = () => {
 
           <div className="flex items-center gap-3 md:gap-4 bg-white p-4 md:p-5 w-full rounded-xl shadow-md border-l-4 border-orange-600 transition-all duration-300 hover:shadow-lg">
             <img
-              src={assets.appointments_icon}
+              src='/appointments_icon.svg'
               alt="Courses icon"
               className="w-6 h-6 md:w-8 md:h-8"
             />
@@ -63,7 +63,7 @@ const Dashboard = () => {
 
           <div className="flex items-center gap-3 md:gap-4 bg-white p-4 md:p-5 w-full rounded-xl shadow-md border-l-4 border-orange-600 transition-all duration-300 hover:shadow-lg">
             <img
-              src={assets.earning_icon}
+              src='/earning_icon.svg'
               alt="Earnings icon"
               className="w-6 h-6 md:w-8 md:h-9 rounded-full"
             />

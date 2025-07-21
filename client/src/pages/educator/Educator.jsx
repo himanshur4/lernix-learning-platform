@@ -1,4 +1,3 @@
-import React from 'react'
 import { Outlet } from 'react-router-dom'
 import NavbarEdu from '../../components/educator/NavbarEdu'
 import Sidebar from '../../components/educator/Sidebar'
@@ -8,7 +7,7 @@ const Educator = () => {
     <div className='text-default min-h-screen bg-white'>
       <NavbarEdu />
 
-      <div className='flex '>
+      <div className='flex'>
         <Sidebar />
         <div className="flex-1">
           {<Outlet />}

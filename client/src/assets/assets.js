@@ -18,13 +18,6 @@ import person_tick_icon from './person_tick_icon.svg'
 import facebook_icon from './facebook_icon.svg'
 import instagram_icon from './instagram_icon.svg'
 import twitter_icon from './twitter_icon.svg'
-import file_upload_icon from './file_upload_icon.svg'
-import appointments_icon from './appointments_icon.svg'
-import earning_icon from './earning_icon.svg'
-import dropdown_icon from './dropdown_icon.svg'
-import patients_icon from './patients_icon.svg'
-import play_icon from './play_icon.svg'
-import blue_tick_icon from './blue_tick_icon.svg'
 import course_4 from './course_4.png'
 import lesson_icon from './lesson_icon.svg'
 
@@ -38,7 +31,6 @@ const assets = {
     course_3_thumbnail,
     course_4_thumbnail,
     arrow_icon,
-    dropdown_icon,
     cross_icon,
     upload_area,
     down_arrow_icon,
@@ -53,12 +45,6 @@ const assets = {
     instagram_icon,
     twitter_icon,
     course_4,
-    file_upload_icon,
-    appointments_icon,
-    earning_icon,
-    patients_icon,
-    play_icon,
-    blue_tick_icon,
     lesson_icon
 }
 

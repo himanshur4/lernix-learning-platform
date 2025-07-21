@@ -4,7 +4,7 @@ import Quill from 'quill'
 import { AppContext } from '../../context/AppContext';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { PlusIcon, UploadCloud } from 'lucide-react';
+import { PlusIcon, UploadCloud, X } from 'lucide-react';
 
 const AddCourse = () => {
   const quillRef = useRef(null);
@@ -125,7 +125,7 @@ const AddCourse = () => {
   }
 
   useEffect(() => {
-    // Initiate Quill only once
+
     if (!quillRef.current && editorRef.current) {
       quillRef.current = new Quill(editorRef.current, {
         theme: 'snow'
@@ -237,9 +237,8 @@ const AddCourse = () => {
                         onClick={() => handleChapter('toggle', chapter.chapterId)}
                         className={`mr-2 transition-transform duration-200 ${chapter.collapsed ? 'rotate-180' : ''}`}
                       >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M18 6L6 18M6 6L18 18" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        
+                        <X className='size-4 text-orange-600' />
                       </button>
                       <span className='font-medium text-sm md:text-base text-orange-900 truncate max-w-32 sm:max-w-full'>Chapter {chapterIndex + 1}: {chapter.chapterTitle}</span>
                     </div>
@@ -251,9 +250,7 @@ const AddCourse = () => {
                         onClick={() => handleChapter('remove', chapter.chapterId)}
                         className="p-1 hover:bg-orange-100 rounded-full transition-colors"
                       >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M18 6L6 18M6 6L18 18" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        <X className='size-4 text-orange-600' />
                       </button>
                     </div>
                   </div>
@@ -274,7 +271,7 @@ const AddCourse = () => {
                                     <span>{lecture.lectureDuration} mins</span>
                                     <span className="hidden xs:inline">•</span>
                                     {lecture.isPreviewFree ? 
-                                      <a href={lecture.lectureUrl} target='_blank' className='text-blue-700 hover:underline text-xs'>Watch Now</a> : 
+                                      <a href={lecture.lectureUrl} target='_blank' className='text-slate-700 hover:underline text-xs'>Watch Now</a> : 
                                       <span className='text-orange-800 text-xs'>Enroll to watch</span>
                                     }
                                   </div>
@@ -286,9 +283,7 @@ const AddCourse = () => {
                                 onClick={() => handleLecture('remove', chapter.chapterId, lectureIndex)}
                                 className="p-1 hover:bg-orange-100 rounded-full transition-colors flex-shrink-0 ml-1"
                               >
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M18 6L6 18M6 6L18 18" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
+                                <X className='size-4 text-orange-600' />
                               </button>
                             </div>
                           ))}
@@ -304,9 +299,7 @@ const AddCourse = () => {
                         className='inline-flex items-center gap-1 md:gap-2 bg-orange-100 hover:bg-orange-200 text-orange-700 px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-colors'
                         onClick={() => handleLecture('add', chapter.chapterId)}
                       >
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 5V19M5 12H19" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        <PlusIcon className='size-4 text-orange-600' />
                         Add Lecture
                       </button>
                     </div>
@@ -334,7 +327,7 @@ const AddCourse = () => {
         </form>
       </div>
 
-      {/* Add Lecture Modal */}
+
       {showPopup && (
         <div className='fixed inset-0 flex items-center justify-center bg-orange-900/20 backdrop-blur-sm z-50 p-4'>
           <div className='bg-white text-orange-900 p-4 md:p-6 rounded-xl shadow-xl relative w-full max-w-md'>
@@ -409,9 +402,7 @@ const AddCourse = () => {
               }}
               className='absolute top-3 right-3 md:top-4 md:right-4 p-1 hover:bg-orange-100 rounded-full transition-colors'
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18M6 6L18 18" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+             <X className='size-4 text-orange-600' />
             </button>
           </div>
         </div>

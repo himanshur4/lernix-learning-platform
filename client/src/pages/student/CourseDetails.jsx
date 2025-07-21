@@ -34,6 +34,9 @@ const CourseDetails = () => {
       if (!userData) {
         return toast.warn('Login to Enroll')
       }
+      if(isOwncourse){
+        return toast.warn('You cannot enroll in your own course')
+      }
       if (isAlreadyEnrolled) {
         return toast.warn('Already Enrolled')
       }
@@ -51,6 +54,7 @@ const CourseDetails = () => {
       toast.error(error.message)
     }
   }
+  const isOwncourse = userData && courseData && userData._id === courseData.educator._id
   useEffect(() => {
     fetchCourseData()
   }, [])
@@ -187,7 +191,7 @@ const CourseDetails = () => {
               </div>
 
             </div>
-            <button onClick={enrollCourse} className='md:mt-6 mt-4 w-full py-3  bg-orange-600 rounded-2xl text-white font-medium hover:transition-all hover:duration-200 cursor-pointer hover:bg-orange-700'>{isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
+            <button onClick={enrollCourse} className='md:mt-6 mt-4 w-full py-3  bg-orange-600 rounded-2xl text-white font-medium hover:transition-all hover:duration-200 cursor-pointer hover:bg-orange-700'>{isOwncourse?'Your Own Course':isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
             <div className='pt-6' >
               <p className='md:text-xl text-lg font-medium text-gray-800' >What's in the course?</p>
               <ul className='ml-4 pt-2 text-sm md:text-default list-disc text-gray-700' >

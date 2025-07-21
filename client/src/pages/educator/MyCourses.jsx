@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../context/AppContext'
 import Loading from '../../components/student/Loading'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
 const MyCourses = () => {
-  const { currency, backendUrl, isEducator, getToken } = useContext(AppContext)
+  const { currency, backendUrl, isEducator, getToken, navigate } = useContext(AppContext)
   const [courses, setCourses] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
 
@@ -45,7 +45,7 @@ const MyCourses = () => {
     <div className="flex-1 min-h-screen">
       <div className="p-4 md:p-8 max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
-          <h1 className="text-xl md:text-2xl font-bold text-gray-800">My Courses</h1>
+          <h1 className="text-xl md:text-2xl font-bold text-orange-900">My Courses</h1>
         </div>
 
         {courses && courses.length > 0 ? (
@@ -63,7 +63,7 @@ const MyCourses = () => {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {courses.map((course) => (
-                    <tr key={course._id} className="hover:bg-orange-50 transition-colors duration-150">
+                    <tr key={course._id} className="hover:bg-orange-50 transition-colors duration-150 cursor-pointer" onClick={() => navigate(`/course/${course._id}`)}>
                       <td className="px-4 py-4">
                         <div className="flex items-center space-x-3">
                           <div className="h-16 w-24 flex-shrink-0 rounded-md overflow-hidden">
@@ -105,7 +105,7 @@ const MyCourses = () => {
               {/* Mobile Card Layout */}
               <div className="md:hidden">
                 {courses.map((course) => (
-                  <div key={course._id} className="p-4 border-b border-gray-100 last:border-b-0">
+                  <div key={course._id} className="cursor-pointer hover:bg-orange-50 p-4 border-b border-gray-300 last:border-b-0" onClick={() => navigate(`/course/${course._id}`)}>
                     <div className="flex flex-col space-y-4">
                       {/* Course Header Info */}
                       <div className="flex items-start space-x-3">
@@ -154,10 +154,9 @@ const MyCourses = () => {
         ) : (
           <div className="text-center py-10 md:py-16 bg-white rounded-lg border border-orange-100 shadow-sm">
             <div className="flex flex-col items-center px-4">
-
               <h3 className="text-lg font-medium text-gray-800 mb-2">No courses published yet...</h3>
-              
-            </div>
+              <p className="text-sm text-gray-500">Once you publish a course, it will appear here.</p>
+             </div>
           </div>
         )}
       </div>

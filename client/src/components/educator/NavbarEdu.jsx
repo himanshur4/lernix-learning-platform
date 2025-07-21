@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import assets, { dummyEducatorData } from '../../assets/assets'
 import { UserButton, useUser } from '@clerk/clerk-react'
-import { Link } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import { BookOpen } from 'lucide-react'
 
@@ -21,11 +20,8 @@ const NavbarEdu = () => {
         </div>
 
 
-        {/* Right Side - User Info & Actions */}
         <div className="flex items-center space-x-4">
 
-
-          {/* User Profile */}
           <div className="flex items-center space-x-3">
             <div className="hidden md:block text-right">
               <p className="text-sm font-medium text-white">
