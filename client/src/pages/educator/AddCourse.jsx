@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import uniqid from 'uniqid'
 import Quill from 'quill'
 import { AppContext } from '../../context/AppContext';
@@ -125,7 +125,6 @@ const AddCourse = () => {
   }
 
   useEffect(() => {
-
     if (!quillRef.current && editorRef.current) {
       quillRef.current = new Quill(editorRef.current, {
         theme: 'snow'
@@ -134,7 +133,7 @@ const AddCourse = () => {
   }, []);
 
   return (
-    <div className='min-h-screen overflow-auto flex flex-col items-center justify-start p-3 sm:p-5 md:p-8 '>
+    <div className='min-h-screen overflow-none flex flex-col items-center justify-start p-3 sm:p-5 md:p-8 '>
       <div className="w-full max-w-3xl">
         <h1 className="text-xl md:text-2xl font-bold text-orange-900 mb-3 md:mb-4">Create New Course</h1>
 
@@ -192,7 +191,7 @@ const AddCourse = () => {
               <label htmlFor="thumbnailImage" className='flex items-center justify-center cursor-pointer hover:bg-orange-50 transition-colors'>
                 {!image && (
                   <div className="flex flex-col items-center justify-center text-orange-500 w-20 h-20 md:w-28 md:h-28 border-2 border-dashed border-orange-300 rounded-lg">
-                    <UploadCloud className='w-8'/>
+                    <UploadCloud className='w-8' />
                     <span className="text-xs md:text-sm">Upload Image</span>
                   </div>
                 )}
@@ -237,7 +236,7 @@ const AddCourse = () => {
                         onClick={() => handleChapter('toggle', chapter.chapterId)}
                         className={`mr-2 transition-transform duration-200 ${chapter.collapsed ? 'rotate-180' : ''}`}
                       >
-                        
+
                         <X className='size-4 text-orange-600' />
                       </button>
                       <span className='font-medium text-sm md:text-base text-orange-900 truncate max-w-32 sm:max-w-full'>Chapter {chapterIndex + 1}: {chapter.chapterTitle}</span>
@@ -270,8 +269,8 @@ const AddCourse = () => {
                                   <div className="flex items-center text-xs text-orange-600 mt-0.5 md:mt-1 gap-1 md:gap-3 flex-wrap">
                                     <span>{lecture.lectureDuration} mins</span>
                                     <span className="hidden xs:inline">•</span>
-                                    {lecture.isPreviewFree ? 
-                                      <a href={lecture.lectureUrl} target='_blank' className='text-slate-700 hover:underline text-xs'>Watch Now</a> : 
+                                    {lecture.isPreviewFree ?
+                                      <a href={lecture.lectureUrl} target='_blank' className='text-slate-700 hover:underline text-xs'>Watch Now</a> :
                                       <span className='text-orange-800 text-xs'>Enroll to watch</span>
                                     }
                                   </div>
@@ -313,7 +312,7 @@ const AddCourse = () => {
               className='flex items-center justify-center gap-1 md:gap-2 w-full bg-orange-100 hover:bg-orange-200 text-orange-700 py-2 md:py-3 rounded-lg mt-3 md:mt-4 font-medium text-sm md:text-base cursor-pointer'
               onClick={() => handleChapter('add')}
             >
-              <PlusIcon className='size-4'/>
+              <PlusIcon className='size-4' />
               Add Chapter
             </button>
           </div>
@@ -397,12 +396,13 @@ const AddCourse = () => {
 
             <button
               type="button"
-              onClick={() => {setShowPopup(false);
+              onClick={() => {
+                setShowPopup(false);
                 toast.success("Course created successfully🎉");
               }}
               className='absolute top-3 right-3 md:top-4 md:right-4 p-1 hover:bg-orange-100 rounded-full transition-colors'
             >
-             <X className='size-4 text-orange-600' />
+              <X className='size-4 text-orange-600' />
             </button>
           </div>
         </div>
