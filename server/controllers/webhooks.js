@@ -32,7 +32,7 @@ export const clerkWebhooks = async (req, res) => {
                     name: data.first_name + " " + data.last_name,
                     imageUrl: data.image_url,
                 }
-                await User.findByIdAndUpdate(data.id)
+                await User.findByIdAndUpdate(data.id,userData)
                 res.json({})
                 break;
             }
@@ -99,6 +99,5 @@ export const stripeWebhooks = async (req, res) => {
             break;
     }
 
-    //Return a response to acknowledge receipt of the event
     res.json({ received: true })
 }
