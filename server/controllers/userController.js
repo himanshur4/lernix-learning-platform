@@ -4,8 +4,6 @@ import Purchase from "../models/purchase.js"
 import User from "../models/user.js"
 import Stripe from "stripe";
 
-
-//Get User Data
 export const getUserData = async (req, res) => {
     try {
         const userId = req.auth.userId
@@ -19,7 +17,6 @@ export const getUserData = async (req, res) => {
     }
 }
 
-//User Enrolled Courses
 
 export const userEnrolledCourses = async (req, res) => {
     try {
@@ -30,9 +27,6 @@ export const userEnrolledCourses = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
-
-
-//Purchase Course
 
 export const purchaseCourse = async (req, res) => {
     try {
@@ -54,7 +48,6 @@ export const purchaseCourse = async (req, res) => {
         //Stripe Gateway Initialize
         const stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY)
         const currency = process.env.CURRENCY.toLowerCase()
-        //Creating line items to for stripe
         const line_items = [{
             price_data: {
                 currency,
@@ -79,8 +72,6 @@ export const purchaseCourse = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
-
-//Update user course progress
 
 export const updateUserCourseProgress = async (req, res) => {
     try {
