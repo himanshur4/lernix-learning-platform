@@ -1,7 +1,5 @@
 import React, { useContext } from 'react'
-import assets from '../../assets/assets'
 import { toast } from 'react-toastify'
-import { Link, Navigate } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 const CallToAction = () => {
   const{userData,navigate}=useContext(AppContext);
@@ -13,11 +11,11 @@ const CallToAction = () => {
       <button onClick={()=>{
         if(!userData) (toast.warn('Please sign in'));
         else {scrollTo(0,0)}
-      }} className='transition-transform duration-300 hover:-translate-y-1 hover:drop-shadow-xl px-10 py-3 rounded-3xl hover:scale-105 text-white bg-orange-600 cursor-pointer'>
+      }} className='transition-transform duration-300 hover:-translate-y-1 hover:drop-shadow-xl px-10 py-3 rounded-3xl hover:scale-105 text-white bg-gradient-to-tl from-orange-600 to-orange-800 cursor-pointer'>
         Get started
       </button>
       <button className='flex items-center gap-2'>
-       Learn more <img src={assets.arrow_icon} alt="arrow_icon" />
+       Learn more <img src="/arrow_icon.svg" alt="arrow_icon" />
       </button>
      </div>
     </div>

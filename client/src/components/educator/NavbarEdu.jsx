@@ -1,11 +1,9 @@
 import { useContext } from 'react'
-import assets, { dummyEducatorData } from '../../assets/assets'
 import { UserButton, useUser } from '@clerk/clerk-react'
 import { AppContext } from '../../context/AppContext'
 import { BookOpen } from 'lucide-react'
 
 const NavbarEdu = () => {
-  const educatorData = dummyEducatorData
   const { user } = useUser()
   const { navigate } = useContext(AppContext)
   return (
@@ -28,7 +26,7 @@ const NavbarEdu = () => {
                 Hi, {user ? user.fullName : 'Educator'}
               </p>
               <p className="text-xs text-white">
-                {educatorData?.title || 'Instructor'}
+                { 'Instructor'}
               </p>
             </div>
             <div>

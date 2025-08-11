@@ -4,7 +4,7 @@ const Hero = () => {
 const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setAnimate(true), 300); // slight delay to trigger animation
+    setTimeout(() => setAnimate(true), 300); 
   }, []);
 
   const animationStyle = {

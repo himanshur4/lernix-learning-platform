@@ -99,8 +99,6 @@ export const updateUserCourseProgress = async (req, res) => {
     }
 }
 
-//get User Course Progress
-
 export const getUserCourseProgress = async (req, res) => {
     try {
         const userId = req.auth.userId
@@ -111,8 +109,6 @@ export const getUserCourseProgress = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
-
-// Add user ratings to the course
 
 export const addUserRating = async (req, res) => {
     const userId = req.auth.userId;

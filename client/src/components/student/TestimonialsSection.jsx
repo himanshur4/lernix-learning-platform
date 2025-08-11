@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
     <p className='md:text-base text-gray-900 mt-3'>Hear from our learners as they share their journeys of transformation, success, and how our<br/>platform has made a difference in their lives.</p>
     <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 mt-14'>
       {dummyTestimonial.map((testimonial,index)=>(
-        <div key={index} className='text-sm text-left pb-4 bg-white overflow-hidden rounded-2xl shadow-md transition-transform duration-300 hover:-translate-y-0.5 hover:drop-shadow-xl border-amber-200 border'>
+        <div key={index} className='text-sm text-left pb-4 bg-white overflow-hidden rounded-2xl shadow-md transition-transform duration-300 hover:-translate-y-0.5 hover:drop-shadow-xl border-gray-300 border'>
           <div className='flex items-center gap-4 px-5 py-4 bg-gradient-to-tl from-orange-600 to-orange-800 '>
             <img className='h-12 w-12 rounded-full' src={testimonial.image} alt={testimonial.name} />
             <div>
@@ -29,7 +29,6 @@ const TestimonialsSection = () => {
       ))}
     </div>
    </div>
-
   )
 }
 

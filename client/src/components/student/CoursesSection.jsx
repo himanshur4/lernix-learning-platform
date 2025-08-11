@@ -13,8 +13,8 @@ const CoursesSection = () => {
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 px-4 md:px-0 md:my-10 my-5 gap-3'>
         {allCourses.slice(0,4).map((course,i)=><CourseCard key={i} course={course}/>)}
       </div>
-      <div className='mt-12 transition-transform duration-400 hover:-translate-y-0.5 hover:drop-shadow-2xl'>
-      <Link to={'/courses-list'} onClick={()=>scrollTo(0,0)} className='font-semibold text-gray-900 border border-black px-10 py-3 rounded-3xl hover:bg-orange-600 hover:text-white hover:scale-120 hover:border-0'>Show all courses</Link>
+      <div className='mt-12 transition-transform duration-400  hover:drop-shadow-2xl'>
+      <Link to={'/courses-list'} onClick={()=>scrollTo(0,0)} className='font-semibold text-gray-900 border border-black px-10 py-3 rounded-3xl hover:bg-gradient-to-tl hover:from-orange-600 hover:to-orange-800 hover:text-white hover:scale-105 hover:border-0'>Show all courses</Link>
       </div>
     </div>
   )

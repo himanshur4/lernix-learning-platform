@@ -270,7 +270,7 @@ const AddCourse = () => {
                                     <span>{lecture.lectureDuration} mins</span>
                                     <span className="hidden xs:inline">•</span>
                                     {lecture.isPreviewFree ?
-                                      <a href={lecture.lectureUrl} target='_blank' className='text-slate-700 hover:underline text-xs'>Watch Now</a> :
+                                      <a href={lecture.lectureUrl} target='_blank' className='text-black hover:underline text-xs'>Watch Now</a> :
                                       <span className='text-orange-800 text-xs'>Enroll to watch</span>
                                     }
                                   </div>

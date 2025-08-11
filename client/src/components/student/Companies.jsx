@@ -1,4 +1,3 @@
-
 const Companies = () => {
   return (
     <div className=' w-full mb-0'>

@@ -1,7 +1,6 @@
-import React, { useContext, useState, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../context/AppContext'
 import { useParams } from 'react-router-dom'
-import assets from '../../assets/assets'
 import humanizeDuration from 'humanize-duration'
 import YouTube from 'react-youtube'
 import Footer from '../../components/student/Footer'
@@ -9,6 +8,7 @@ import Rating from '../../components/student/Rating'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import Loading from '../../components/student/Loading'
+import { ChevronDownIcon, LucideCheck, PlayCircleIcon } from 'lucide-react'
 const Player = () => {
 
   const { enrolledCourses, calculateChapterTime, backendUrl, getToken, userData, fetchUserEnrolledCourses } = useContext(AppContext)
@@ -110,7 +110,7 @@ const Player = () => {
                 <div key={index} className='border border-gray-300 bg-white mb-2 rounded'>
                   <div onClick={() => toggleSection(index)} className='flex items-center justify-between px-4 py-3 cursor-pointer select-none '>
                     <div className='flex items-center gap-2'>
-                      <img className={`transform transition-transform ${openSections[index] ? 'rotate-180' : ''}`} src={assets.down_arrow_icon} alt="arrow icon" />
+                     <ChevronDownIcon size={20} className={`text-gray-500 transition-transform ${openSections[index] ? 'rotate-180' : ''}`} />
                       <p className='font-medium md:text-base text-sm'>{chapter.chapterTitle}</p>
                     </div>
                     <p className='text-sm md:text-default'>{chapter.chapterContent.length} lectures - {calculateChapterTime(chapter)}</p>
@@ -121,7 +121,7 @@ const Player = () => {
 
                       {chapter.chapterContent.map((lecture, i) => (
                         <li key={i} className='flex items-start gap-2 py-1'>
-                          <img src={progressData && progressData.lectureCompleted.includes(lecture.lectureId) ? assets.blue_tick_icon : assets.play_icon} alt="play icon" className='w-4 h-4 mt-1' />
+                          {progressData && progressData.lectureCompleted.includes(lecture.lectureId) ? <LucideCheck size={17} className='text-orange-700'/> : <PlayCircleIcon size={17} className='text-gray-500'/>}  
                           <div className='flex items-center justify-between w-full text-gray-800 text-xs md:text-default'>
                             <p>
                               {lecture.lectureTitle}
@@ -155,7 +155,7 @@ const Player = () => {
               <YouTube videoId={playerData.lectureUrl.split('/').pop()} iframeClassName='w-full aspect-video' />
               <div className='flex justify-between items-center mt-1'>
                 <p>{playerData.chapter}.{playerData.lecture} {playerData.lectureTitle}</p>
-                <button onClick={()=>markLectureAsCompleted(playerData.lectureId)}>{progressData && progressData.lectureCompleted.includes(playerData.lectureId) ? 'Completed' : 'Mark Complete'}</button>
+                <button onClick={()=>markLectureAsCompleted(playerData.lectureId)} className='text-orange-600 cursor-pointer'>{progressData && progressData.lectureCompleted.includes(playerData.lectureId) ? 'Completed' : 'Mark Complete'}</button>
               </div>
             </div>
           )
