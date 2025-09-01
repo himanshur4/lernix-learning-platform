@@ -14,7 +14,7 @@ const [animate, setAnimate] = useState(false);
   };
 
   return (<>
-    <div className='flex flex-col items-center justify-center w-full sm:pt-23 md:pt-27 lg:pt-30 pt-20 px-7 md:px-0 space-y-7 text-center mb-0'>
+    <div className='flex flex-col items-center justify-center w-full sm:pt-23 md:pt-25 lg:pt-30 pt-20 px-7 md:px-0 space-y-7 text-center mb-0'>
       <h1 className='md:text-home-heading -large text-home-heading-small relative font-bold sm:max-w-xl md:max-w-2xl lg:max-w-3/5 mx-auto text-3xl md:text-4xl lg:text-5xl  transition-all '  style={animationStyle}>
         Take control of your future with courses that<span className='text-orange-900'> fit your choice...</span>
       </h1>
