@@ -10,7 +10,7 @@ const MainLayout = ({ children }) => {
   return (
     // This parent div needs to be relative for the absolute background to work
 
-<div className="min-h-screen w-full bg-white bg- relative text-gray-800">
+<div className="min-h-screen w-full relative border-1 border-cyan-950">
       <AppBackground />
       
       {/* This container holds your actual content and sits on top of the background */}
