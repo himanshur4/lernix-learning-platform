@@ -13,7 +13,7 @@ const Sidebar = () => {
   ];
   
   return isEducator && (
-    <div className="md:w-65 lg:w-72 w-20 min-h-screen text-base py-4 flex flex-col bg-gradient-to-br from-orange-900 via-orange-700 to-orange-500 shadow-lg">
+    <div className="md:w-65 lg:w-72 w-20 min-h-screen text-base py-4 flex flex-col bg-gradient-to-br from-teal-900 via-teal-700 to-teal-500 shadow-lg">
       <div className="px-4 mb-6">
         <h2 className="text-white font-bold text-xl md:block hidden">Educator Dashboard</h2>
       </div>
@@ -28,8 +28,8 @@ const Sidebar = () => {
               flex items-center md:flex-row flex-col md:justify-start justify-center 
               py-3 md:px-6 rounded-lg transition-all duration-100 gap-3
               ${isActive 
-                ? 'bg-white/10 text-white/90 border-l-4 border-orange-200' 
-                : 'text-orange-100 hover:bg-white/5 hover:border-l-4 hover:border-orange-300/50'
+                ? 'bg-white/10 text-white/90 border-l-4 border-teal-200' 
+                : 'text-teal-100 hover:bg-white/5 hover:border-l-4 hover:border-teal-300/50'
               }
             `}
           >
