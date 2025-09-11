@@ -121,7 +121,7 @@ const Player = () => {
 
                       {chapter.chapterContent.map((lecture, i) => (
                         <li key={i} className='flex items-start gap-2 py-1'>
-                          {progressData && progressData.lectureCompleted.includes(lecture.lectureId) ? <LucideCheck size={17} className='text-orange-700'/> : <PlayCircleIcon size={17} className='text-gray-500'/>}  
+                          {progressData && progressData.lectureCompleted.includes(lecture.lectureId) ? <LucideCheck size={17} className='text-teal-700'/> : <PlayCircleIcon size={17} className='text-gray-500'/>}  
                           <div className='flex items-center justify-between w-full text-gray-800 text-xs md:text-default'>
                             <p>
                               {lecture.lectureTitle}
@@ -131,7 +131,7 @@ const Player = () => {
                                 ...lecture, chapter: index + 1, lecture: i + 1
 
                               })}
-                                className='text-orange-500 cursor-pointer'>Watch</p>}
+                                className='text-teal-500 cursor-pointer'>Watch</p>}
                               <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, { units: ['h', 'm'] })}</p>
                             </div>
                           </div>
@@ -155,7 +155,7 @@ const Player = () => {
               <YouTube videoId={playerData.lectureUrl.split('/').pop()} iframeClassName='w-full aspect-video' />
               <div className='flex justify-between items-center mt-1'>
                 <p>{playerData.chapter}.{playerData.lecture} {playerData.lectureTitle}</p>
-                <button onClick={()=>markLectureAsCompleted(playerData.lectureId)} className='text-orange-600 cursor-pointer'>{progressData && progressData.lectureCompleted.includes(playerData.lectureId) ? 'Completed' : 'Mark Complete'}</button>
+                <button onClick={()=>markLectureAsCompleted(playerData.lectureId)} className='text-teal-600 cursor-pointer'>{progressData && progressData.lectureCompleted.includes(playerData.lectureId) ? 'Completed' : 'Mark Complete'}</button>
               </div>
             </div>
           )

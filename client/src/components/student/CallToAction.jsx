@@ -11,7 +11,7 @@ const CallToAction = () => {
       <button onClick={()=>{
         if(!userData) (toast.warn('Please sign in'));
         else {scrollTo(0,0)}
-      }} className='transition-transform duration-300 hover:-translate-y-1 hover:drop-shadow-xl px-10 py-3 rounded-3xl hover:scale-105 text-white bg-gradient-to-tl from-orange-600 to-orange-800 cursor-pointer'>
+      }} className='transition-transform duration-300 hover:-translate-y-1 hover:drop-shadow-xl px-10 py-3 rounded-3xl hover:scale-105 text-white bg-gradient-to-tl from-teal-600 to-teal-800 cursor-pointer'>
         Get started
       </button>
       <button className='flex items-center gap-2'>

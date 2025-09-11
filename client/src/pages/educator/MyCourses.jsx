@@ -45,16 +45,16 @@ const MyCourses = () => {
     <div className="flex-1 min-h-screen">
       <div className="p-4 md:p-8 max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
-          <h1 className="text-xl md:text-2xl font-bold text-orange-900">My Courses</h1>
+          <h1 className="text-xl md:text-2xl font-bold text-teal-900">My Courses</h1>
         </div>
 
         {courses && courses.length > 0 ? (
-          <div className="bg-white rounded-lg shadow-sm border border-orange-100 overflow-hidden">
+          <div className="bg-white rounded-lg shadow-sm border border-teal-100 overflow-hidden">
             <div className="overflow-x-auto">
               {/* Desktop Table View */}
               <table className="w-full hidden md:table">
                 <thead>
-                  <tr className="bg-orange-50 text-left">
+                  <tr className="bg-teal-50 text-left">
                     <th className="px-4 py-3 font-semibold text-gray-700">Course</th>
                     <th className="px-4 py-3 font-semibold text-gray-700">Earnings</th>
                     <th className="px-4 py-3 font-semibold text-gray-700">Students</th>
@@ -63,7 +63,7 @@ const MyCourses = () => {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {courses.map((course) => (
-                    <tr key={course._id} className="hover:bg-orange-50 transition-colors duration-150 cursor-pointer" onClick={() => navigate(`/course/${course._id}`)}>
+                    <tr key={course._id} className="hover:bg-teal-50 transition-colors duration-150 cursor-pointer" onClick={() => navigate(`/course/${course._id}`)}>
                       <td className="px-4 py-4">
                         <div className="flex items-center space-x-3">
                           <div className="h-16 w-24 flex-shrink-0 rounded-md overflow-hidden">
@@ -84,7 +84,7 @@ const MyCourses = () => {
                       </td>
                       <td className="px-4 py-4 text-gray-700">
                         <div className="flex items-center">
-                          <span className="bg-orange-100 text-orange-800 py-1 px-2 rounded-full text-xs font-medium">
+                          <span className="bg-teal-100 text-teal-800 py-1 px-2 rounded-full text-xs font-medium">
                             {course.enrolledStudents.length}
                           </span>
                         </div>
@@ -105,7 +105,7 @@ const MyCourses = () => {
               {/* Mobile Card Layout */}
               <div className="md:hidden">
                 {courses.map((course) => (
-                  <div key={course._id} className="cursor-pointer hover:bg-orange-50 p-4 border-b border-gray-300 last:border-b-0" onClick={() => navigate(`/course/${course._id}`)}>
+                  <div key={course._id} className="cursor-pointer hover:bg-teal-50 p-4 border-b border-gray-300 last:border-b-0" onClick={() => navigate(`/course/${course._id}`)}>
                     <div className="flex flex-col space-y-4">
                       {/* Course Header Info */}
                       <div className="flex items-start space-x-3">
@@ -130,7 +130,7 @@ const MyCourses = () => {
                         </div>
                         <div className="flex flex-col">
                           <span className="text-xs text-gray-500">Students</span>
-                          <span className="bg-orange-100 text-orange-800 py-1 px-2 rounded-full text-xs font-medium">
+                          <span className="bg-teal-100 text-teal-800 py-1 px-2 rounded-full text-xs font-medium">
                             {course.enrolledStudents.length}
                           </span>
                         </div>
@@ -152,7 +152,7 @@ const MyCourses = () => {
             </div>
           </div>
         ) : (
-          <div className="text-center py-10 md:py-16 bg-white rounded-lg border border-orange-100 shadow-sm">
+          <div className="text-center py-10 md:py-16 bg-white rounded-lg border border-teal-100 shadow-sm">
             <div className="flex flex-col items-center px-4">
               <h3 className="text-lg font-medium text-gray-800 mb-2">No courses published yet...</h3>
               <p className="text-sm text-gray-500">Once you publish a course, it will appear here.</p>

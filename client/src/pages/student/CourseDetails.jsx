@@ -87,12 +87,12 @@ const CourseDetails = () => {
                 <img key={i} src={i < Math.floor(calculateRating(courseData)) ? '/rating_star.svg' : '/star_dull_icon.svg'} alt='ratingStar' className='w-3.5 h-3.5' />
               ))}
             </div>
-            <p className='text-orange-600'>({courseData.courseRatings.length} {courseData.courseRatings.length > 1 ? 'ratings' : 'rating'})</p>
+            <p className='text-teal-600'>({courseData.courseRatings.length} {courseData.courseRatings.length > 1 ? 'ratings' : 'rating'})</p>
 
             <p>{courseData.enrolledStudents.length} {courseData.enrolledStudents.length > 1 ? 'students' : 'student'}</p>
 
           </div>
-          <p className='text-sm'>Course by <span className='text-orange-600 underline'>{courseData.educator.name}</span></p>
+          <p className='text-sm'>Course by <span className='text-teal-600 underline'>{courseData.educator.name}</span></p>
           <div className='pt-8 text-gray-800'>
             <h2 className='text-xl font-semibold '>Course structure</h2>
             <div className='pt-5'>
@@ -122,7 +122,7 @@ const CourseDetails = () => {
                                   videoId: lecture.lectureUrl.split('/').pop()
 
                                 })}
-                                  className='text-orange-500 cursor-pointer'>Preview</p>}
+                                  className='text-teal-500 cursor-pointer'>Preview</p>}
                                 <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, { units: ['h', 'm'] })}</p>
                               </div>
                             </div>
@@ -158,7 +158,7 @@ const CourseDetails = () => {
             <div className='flex items-center gap-2'>
               <Clock3Icon size={20} className='text-gray-500' />
               {/* <img className='w-3.5' src={assets.time_left_clock_icon} alt="time left clock icon" /> */}
-              <p className='text-red-500' ><span className='font-medium' >5 days</span> left at this price!</p>
+              <p className='text-teal-500' ><span className='font-medium' >5 days</span> left at this price!</p>
             </div>
             <div className='flex gap-3 items-center pt-2'>
               <p className='text-gray-800 md:text-4xl text-2xl font-semibold'>
@@ -191,7 +191,7 @@ const CourseDetails = () => {
               </div>
 
             </div>
-            <button onClick={enrollCourse} className='md:mt-6 mt-4 w-full py-3  bg-orange-600 rounded-2xl text-white font-medium hover:transition-all hover:duration-200 cursor-pointer hover:bg-orange-700'>{isOwncourse?'Your Own Course':isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
+            <button onClick={enrollCourse} className='md:mt-6 mt-4 w-full py-3  bg-teal-600 rounded-2xl text-white font-medium hover:transition-all hover:duration-200 cursor-pointer hover:bg-teal-700'>{isOwncourse?'Your Own Course':isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
             <div className='pt-6' >
               <p className='md:text-xl text-lg font-medium text-gray-800' >What's in the course?</p>
               <ul className='ml-4 pt-2 text-sm md:text-default list-disc text-gray-700' >
