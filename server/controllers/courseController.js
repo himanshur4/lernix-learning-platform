@@ -1,11 +1,25 @@
 import Course from "../models/course.js";
+import Redis from "ioredis";
 
+const redis = new Redis(process.env.REDIS_URL);
 export const getAllCourses= async(req,res)=>{
-    try{
-        const courses=await Course.find({
-            isPublished:true
-        }).select(['-courseContent','-enrolledStudents']).populate({path:'educator'})
-        res.json({success:true,courses})
+    try {
+        const cachedCourses = await redis.get("lernix:all_courses");
+
+        if (cachedCourses) {
+            return res.json({ 
+                success: true, 
+                courses: JSON.parse(cachedCourses) 
+            });
+        }
+
+        const courses = await Course.find({
+            isPublished: true
+        }).select(['-courseContent', '-enrolledStudents']).populate({ path: 'educator' });
+
+        await redis.set("lernix:all_courses", JSON.stringify(courses), "EX", 3600);
+
+        res.json({ success: true, courses });
     }catch(error){
         res.json({success:false,message:error.message})
     }

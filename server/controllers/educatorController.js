@@ -3,6 +3,10 @@ import Course from '../models/course.js';
 import { v2 as cloudinary } from 'cloudinary';
 import Purchase from '../models/purchase.js';
 import User from '../models/user.js';
+import Redis from "ioredis";
+
+
+const redis = new Redis(process.env.REDIS_URL);
 export const updateRoleToEducator = async (req, res) => {
     try {
         const userId = req.auth.userId;
@@ -39,7 +43,8 @@ export const addCourse = async (req, res) => {
         const newCourse = await Course.create(parsedCourseData)
         const imageUpload = await cloudinary.uploader.upload(imageFile.path)
         newCourse.courseThumbnail = imageUpload.secure_url
-        await newCourse.save()
+        await newCourse.save();
+        await redis.del("lernix:all_courses");
         res.json({ success: true, message: 'Course Added' })
     } catch (error) {
         res.json({ success: false, message: error.message })
