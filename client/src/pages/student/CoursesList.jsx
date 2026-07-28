@@ -34,7 +34,7 @@ const CoursesList = () => {
             <h1 className='text-4xl font-semibold text-gray-900'>
               Courses List
             </h1>
-            <p className='text-gray-600'><span onClick={() => navigate('/')} className='text-orange-700 cursor-pointer'>Home</span> / <span>Courses List</span></p>
+            <p className='text-gray-600'><span onClick={() => navigate('/')} className='text-teal-700 cursor-pointer'>Home</span> / <span>Courses List</span></p>
           </div>
           <SearchBar data={input} />
         </div>

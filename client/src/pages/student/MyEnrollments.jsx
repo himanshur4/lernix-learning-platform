@@ -56,13 +56,13 @@ const MyEnrollments = () => {
         <h1 className='text-xl md:text-2xl font-semibold'>My Enrollments</h1>
 
         {enrolledCourses.length === 0 && (
-          <div className="flex flex-col items-center justify-center mt-16 p-6 bg-orange-50 rounded-lg border border-orange-200">
-            <AlertCircle size={48} className="text-orange-500 mb-4" />
+          <div className="flex flex-col items-center justify-center mt-16 p-6 bg-teal-50 rounded-lg border border-teal-200">
+            <AlertCircle size={48} className="text-teal-500 mb-4" />
             <h2 className="text-lg font-medium text-gray-800 mb-2">No Courses Enrolled</h2>
             <p className="text-gray-600 text-center mb-4">You haven't enrolled in any courses yet. Browse our catalog to find courses that interest you.</p>
             <button 
               onClick={() => navigate('/courses-list')} 
-              className="px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors cursor-pointer"
+              className="px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700 transition-colors cursor-pointer"
             >
               Browse Courses
             </button>
@@ -105,7 +105,7 @@ const MyEnrollments = () => {
                     </td>
                     <td className='px-4 py-3'>
                       <button
-                        className='px-4 py-2 bg-orange-600 text-white rounded-3xl hover:bg-orange-700 transition-colors cursor-pointer'
+                        className='px-4 py-2 bg-teal-600 text-white rounded-3xl hover:bg-teal-700 transition-colors cursor-pointer'
                         onClick={() => navigate('/player/' + course._id)}
                       >
                         
@@ -141,7 +141,7 @@ const MyEnrollments = () => {
                     />
                     <div className='flex justify-end'>
                       <button
-                        className='px-3 py-1.5 bg-orange-600 text-white text-xs rounded-3xl hover:bg-orange-700 hover:transition-all hover:duration-200 cursor-pointer'
+                        className='px-3 py-1.5 bg-teal-600 text-white text-xs rounded-3xl hover:bg-teal-700 hover:transition-all hover:duration-200 cursor-pointer'
                         onClick={() => navigate('/player/' + course._id)}
                       >
                         {progressArray[index] && progressArray[index].lectureCompleted / progressArray[index].totalLectures === 1 ? 'Completed' : 'Ongoing...'}

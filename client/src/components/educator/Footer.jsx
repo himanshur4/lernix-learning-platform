@@ -2,10 +2,10 @@ import { BookOpen, Facebook, LucideInstagram, TwitterIcon } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className='flex md:flex-row flex-col-reverse items-center justify-between text-left w-full px-8  bg-gradient-to-l from-orange-900 via-orange-600 to-orange-400 '>
+    <footer className='flex md:flex-row flex-col-reverse items-center justify-between text-left w-full px-8  bg-gradient-to-l from-teal-900 via-teal-600 to-teal-400 '>
       <div className='flex items-center gap-4'>
         <div onClick={() => navigate('/')} className="flex items-center space-x-3 cursor-pointer">
-          <div className={`flex items-center justify-center bg-gradient-to-tl from-black to-orange-900 via-orange-900 text-white p-1 rounded-lg shadow-md transition-all duration-300 hover:scale-110`}>
+          <div className={`flex items-center justify-center bg-gradient-to-tl from-black to-teal-900 via-teal-900 text-white p-1 rounded-lg shadow-md transition-all duration-300 hover:scale-110`}>
             <BookOpen size={20} className="mr-1" />
             <span className="font-semibold text-lg font-mono">L</span>
           </div>

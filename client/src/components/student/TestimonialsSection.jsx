@@ -8,7 +8,7 @@ const TestimonialsSection = () => {
     <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 mt-14'>
       {dummyTestimonial.map((testimonial,index)=>(
         <div key={index} className='text-sm text-left pb-4 bg-white overflow-hidden rounded-2xl shadow-md transition-transform duration-300 hover:-translate-y-0.5 hover:drop-shadow-xl border-gray-300 border'>
-          <div className='flex items-center gap-4 px-5 py-4 bg-gradient-to-tl from-orange-600 to-orange-800 '>
+          <div className='flex items-center gap-4 px-5 py-4 bg-gradient-to-tl from-teal-600 to-teal-800 '>
             <img className='h-12 w-12 rounded-full' src={testimonial.image} alt={testimonial.name} />
             <div>
               <h1 className='text-lg font-medium text-white'>{testimonial.name}</h1>
@@ -24,7 +24,7 @@ const TestimonialsSection = () => {
               </div>
               <p className='text-black mt-5'>{testimonial.feedback}</p>
             </div>
-            <a href="#" className='text-blue-600 underline px-5'>Read more</a>
+            <a href="#" className='text-teal-600 underline px-5'>Read more</a>
         </div>
       ))}
     </div>
