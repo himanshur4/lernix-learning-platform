@@ -6,20 +6,20 @@ Lernix is a full-featured e-learning platform built to deliver a smooth and enga
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🔐 **Secure Authentication** — Role-based user authentication via **Clerk** (student and educator roles)
-- 💳 **Course Payments** — Secure payments and checkout using **Stripe**
-- ⚡ **Redis Caching** — Course listing cached with Redis to reduce database load and speed up the landing page; cache automatically clears when a new course is published
-- ☁️ **Cloudinary Media** — Upload and delivery of course thumbnails, previews, and videos with CDN optimization
-- 📚 **Course Enrollment** — Browse all published courses, view details, and enroll after payment
-- 📝 **Educator Tools** — Create courses, upload media, track enrolled students, and view earnings via a dedicated dashboard
-- 📊 **Progress Tracking** — Students can track lecture completion status in real time
-- ⭐ **Course Ratings** — Enrolled students can rate courses from 1 to 5 stars
+- **Secure Authentication** — Role-based user authentication via **Clerk** (student and educator roles)
+- **Course Payments** — Secure payments and checkout using **Stripe**
+- **Redis Caching** — Course listing cached with Redis to reduce database load and speed up the landing page; cache automatically clears when a new course is published
+- **Cloudinary Media** — Upload and delivery of course thumbnails, previews, and videos with CDN optimization
+- **Course Enrollment** — Browse all published courses, view details, and enroll after payment
+- **Educator Tools** — Create courses, upload media, track enrolled students, and view earnings via a dedicated dashboard
+- **Progress Tracking** — Students can track lecture completion status in real time
+- **Course Ratings** — Enrolled students can rate courses from 1 to 5 stars
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Node.js** & **Express.js** — Backend API
 - **MongoDB** (Mongoose) — Database
@@ -33,7 +33,7 @@ Lernix is a full-featured e-learning platform built to deliver a smooth and enga
 
 ---
 
-## 📦 Getting Started
+##  Getting Started
 
 ### 1. Clone the Repository
 
@@ -61,7 +61,7 @@ npm run dev
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 ### Backend (`server/.env`)
 
@@ -87,7 +87,7 @@ VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 
 ---
 
-## ⚡ Redis Caching
+## Redis Caching
 
 - The platform uses **Redis** to cache the list of all published courses (`lernix:all_courses`)
 - Cached data expires automatically after **1 hour**
@@ -96,7 +96,7 @@ VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 
 ---
 
-## 💳 Stripe Integration
+## Stripe Integration
 
 - Stripe is integrated on the frontend using `@stripe/react-stripe-js` and `@stripe/stripe-js`
 - Secure payment intent creation is handled on the backend via the Stripe SDK
@@ -104,24 +104,9 @@ VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 
 ---
 
-## ☁️ Cloudinary Integration
+## Cloudinary Integration
 
 - Used to upload and manage course thumbnails, previews, and videos
 - Ensures optimized, fast-loading media content with built-in CDN support
 - Media files are stored securely and fetched dynamically across the platform
-
----
-
-## 🙌 Contributing
-
-Open to contributions! Feel free to fork the repo, open issues, or submit pull requests.
-
----
-
-## 📄 License
-
-[MIT License](LICENSE)
-
-
-
 
